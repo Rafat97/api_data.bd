@@ -1,0 +1,51 @@
+﻿@model IEnumerable<api_data_bd.Models.InstituitionsAddress>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituitionAddressUnion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituitionAddressThana)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituitionAddressDivision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituitionAddressDistrict)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituitionAddressUnion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituitionAddressThana)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituitionAddressDivision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituitionAddressDistrict)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InstituitionAddressId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InstituitionAddressId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InstituitionAddressId })
+        </td>
+    </tr>
+}
+
+</table>

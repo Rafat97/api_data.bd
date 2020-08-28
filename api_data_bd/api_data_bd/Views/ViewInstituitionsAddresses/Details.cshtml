@@ -1,0 +1,50 @@
+﻿@model api_data_bd.Models.InstituitionsAddress
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InstituitionsAddress</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionAddressUnion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionAddressUnion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionAddressThana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionAddressThana)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionAddressDivision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionAddressDivision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionAddressDistrict)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionAddressDistrict)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstituitionAddressId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

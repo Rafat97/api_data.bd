@@ -268,6 +268,8 @@
     <Compile Include="Controllers\MainStudentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ViewInstituitionsAddressesController.cs" />
+    <Compile Include="Controllers\ViewInstituitionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -353,6 +355,16 @@
     <Content Include="Views\MainStudents\Details.cshtml" />
     <Content Include="Views\MainStudents\Edit.cshtml" />
     <Content Include="Views\MainStudents\Index.cshtml" />
+    <Content Include="Views\ViewInstituitions\Create.cshtml" />
+    <Content Include="Views\ViewInstituitions\Delete.cshtml" />
+    <Content Include="Views\ViewInstituitions\Details.cshtml" />
+    <Content Include="Views\ViewInstituitions\Edit.cshtml" />
+    <Content Include="Views\ViewInstituitions\Index.cshtml" />
+    <Content Include="Views\ViewInstituitionsAddresses\Create.cshtml" />
+    <Content Include="Views\ViewInstituitionsAddresses\Delete.cshtml" />
+    <Content Include="Views\ViewInstituitionsAddresses\Details.cshtml" />
+    <Content Include="Views\ViewInstituitionsAddresses\Edit.cshtml" />
+    <Content Include="Views\ViewInstituitionsAddresses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

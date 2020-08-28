@@ -1,0 +1,82 @@
+﻿@model api_data_bd.Models.Instituitions
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instituitions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionAddress.InstituitionAddressUnion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionAddress.InstituitionAddressUnion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionEiin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionEiin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionManagementType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionManagementType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituitionEducationLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituitionEducationLevel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstituitionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
