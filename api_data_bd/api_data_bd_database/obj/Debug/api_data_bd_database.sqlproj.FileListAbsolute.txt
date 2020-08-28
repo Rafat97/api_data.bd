@@ -17,3 +17,13 @@ D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_d
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\predeploy.sql
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.dll
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dacpac
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dll
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.pdb
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.sqlprojAssemblyReference.cache
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\Model.xml
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\refactor.xml
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\postdeploy.sql
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\predeploy.sql
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.dll
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb
