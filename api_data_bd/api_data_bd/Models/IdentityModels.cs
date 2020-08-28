@@ -31,5 +31,10 @@ namespace api_data_bd.Models
         }
 
         public System.Data.Entity.DbSet<api_data_bd.Models.Students> Students { get; set; }
+
+        object placeHolderVariable;
+        public System.Data.Entity.DbSet<api_data_bd.Models.Instituitions> Instituitions { get; set; }
+
+        public System.Data.Entity.DbSet<api_data_bd.Models.InstituitionsAddress> InstituitionsAddresses { get; set; }
     }
 }

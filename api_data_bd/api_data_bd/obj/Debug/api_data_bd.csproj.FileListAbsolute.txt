@@ -291,4 +291,3 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CopyComplete
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.pdb
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
