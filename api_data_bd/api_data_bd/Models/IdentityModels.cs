@@ -29,5 +29,7 @@ namespace api_data_bd.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<api_data_bd.Models.Students> Students { get; set; }
     }
 }
