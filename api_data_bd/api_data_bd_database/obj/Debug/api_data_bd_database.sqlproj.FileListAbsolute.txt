@@ -10,7 +10,6 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\D
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dacpac
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dll
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.pdb
-D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.sqlprojAssemblyReference.cache
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\Model.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\refactor.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\postdeploy.sql
