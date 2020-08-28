@@ -21,7 +21,7 @@ namespace api_data_bd.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("api_data_bd_database_sql", throwIfV1Schema: false)
+            : base("api_data_bd_database_sql_local", throwIfV1Schema: false)
         {
         }
         
