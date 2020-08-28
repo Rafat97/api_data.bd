@@ -103,8 +103,6 @@ D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_d
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\K4os.Hash.xxHash.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Data.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Data.Entity.EF6.xml
-D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Data.EntityFramework.xml
-D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Web.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\Renci.SshNet.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\System.Buffers.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\System.Memory.xml

@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="api_data_bd_database.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\RAFAT\MY_GITHUB\SD-5\API_DATA.BD\API_DATA_BD\API_DATA_BD_DATABASE\OBJ\DEBUG\API_DATA_BD_DATABASE.DLL" />
+			<Metadata Name="FileName" Value="D:\CSE NOTE AND EVERYTHING\3.2\SD LAB\WEB PROJECTS\API_DATA.BD\API_DATA_BD\API_DATA_BD_DATABASE\OBJ\DEBUG\API_DATA_BD_DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="api_data_bd_database" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

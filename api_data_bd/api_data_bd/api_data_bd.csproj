@@ -260,6 +260,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BoardResultsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituitionsAddressesController.cs" />
     <Compile Include="Controllers\InstituitionsController.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BoardResult.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituitions.cs" />
     <Compile Include="Models\InstituitionsAddress.cs" />
