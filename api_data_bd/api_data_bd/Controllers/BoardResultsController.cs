@@ -38,7 +38,7 @@ namespace api_data_bd.Controllers
 
         // PUT: api/BoardResults/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBoardResult(string id, BoardResult boardResult)
+        public async Task<IHttpActionResult> PutBoardResult(int id, BoardResult boardResult)
         {
             if (!ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace api_data_bd.Controllers
             base.Dispose(disposing);
         }
 
-        private bool BoardResultExists(string id)
+        private bool BoardResultExists(int id)
         {
             return db.BoardResults.Count(e => e.BoardResultId == id) > 0;
         }

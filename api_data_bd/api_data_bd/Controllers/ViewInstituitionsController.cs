@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -16,20 +15,20 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ViewInstituitions
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             var instituitions = db.Instituitions.Include(i => i.InstituitionAddress);
-            return View(await instituitions.ToListAsync());
+            return View(instituitions.ToList());
         }
 
         // GET: ViewInstituitions/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instituitions instituitions = await db.Instituitions.FindAsync(id);
+            Instituitions instituitions = db.Instituitions.Find(id);
             if (instituitions == null)
             {
                 return HttpNotFound();
@@ -49,12 +48,12 @@ namespace api_data_bd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "InstituitionId,InstituitionName,InstituitionEstablishment,InstituitionType,InstituitionEiin,InstituitionPhoneNumber,InstituitionManagementType,InstituitionEducationLevel,InstituitionAddressId")] Instituitions instituitions)
+        public ActionResult Create([Bind(Include = "InstituitionId,InstituitionName,InstituitionEstablishment,InstituitionType,InstituitionEiin,InstituitionPhoneNumber,InstituitionManagementType,InstituitionEducationLevel,InstituitionAddressId")] Instituitions instituitions)
         {
             if (ModelState.IsValid)
             {
                 db.Instituitions.Add(instituitions);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +62,13 @@ namespace api_data_bd.Controllers
         }
 
         // GET: ViewInstituitions/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instituitions instituitions = await db.Instituitions.FindAsync(id);
+            Instituitions instituitions = db.Instituitions.Find(id);
             if (instituitions == null)
             {
                 return HttpNotFound();
@@ -83,12 +82,12 @@ namespace api_data_bd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "InstituitionId,InstituitionName,InstituitionEstablishment,InstituitionType,InstituitionEiin,InstituitionPhoneNumber,InstituitionManagementType,InstituitionEducationLevel,InstituitionAddressId")] Instituitions instituitions)
+        public ActionResult Edit([Bind(Include = "InstituitionId,InstituitionName,InstituitionEstablishment,InstituitionType,InstituitionEiin,InstituitionPhoneNumber,InstituitionManagementType,InstituitionEducationLevel,InstituitionAddressId")] Instituitions instituitions)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(instituitions).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.InstituitionAddressId = new SelectList(db.InstituitionsAddresses, "InstituitionAddressId", "InstituitionAddressUnion", instituitions.InstituitionAddressId);
@@ -96,13 +95,13 @@ namespace api_data_bd.Controllers
         }
 
         // GET: ViewInstituitions/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instituitions instituitions = await db.Instituitions.FindAsync(id);
+            Instituitions instituitions = db.Instituitions.Find(id);
             if (instituitions == null)
             {
                 return HttpNotFound();
@@ -113,11 +112,11 @@ namespace api_data_bd.Controllers
         // POST: ViewInstituitions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Instituitions instituitions = await db.Instituitions.FindAsync(id);
+            Instituitions instituitions = db.Instituitions.Find(id);
             db.Instituitions.Remove(instituitions);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

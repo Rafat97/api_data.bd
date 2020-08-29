@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace api_data_bd.Models
 {
@@ -34,8 +36,14 @@ namespace api_data_bd.Models
         public string InstituitionEducationLevel { get; set; }
 
 
+        public int ? InstituitionAddressId { get; set; }
         public virtual InstituitionsAddress InstituitionAddress { get; set; }
-        public int InstituitionAddressId { get; set; }
+
+
+        //[JsonIgnore]
+        //[XmlIgnore]
+        //[IgnoreDataMember]
+        public virtual ICollection<BoardResult> BoardResult { get; set; }
 
 
         public Instituitions()

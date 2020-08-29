@@ -10,7 +10,7 @@ namespace api_data_bd.Models
     public class BoardResult
     {
         [Key]
-        public string BoardResultId { get; set; }
+        public int BoardResultId { get; set; }
 
         [Required]
         public string Year { get; set; }
@@ -27,7 +27,12 @@ namespace api_data_bd.Models
         [Required]
         public string FailStudentNumber { get; set; }
 
-        public virtual ICollection<Instituitions> Instituition { get; set; }
+
+        public int ? InstituitionId { get; set; }
+        public virtual Instituitions Instituitions { get; set; }
+
+
+        //public virtual ICollection<Instituitions> Instituition { get; set; }
 
 
         public BoardResult()

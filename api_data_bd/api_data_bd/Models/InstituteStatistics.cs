@@ -32,7 +32,11 @@ namespace api_data_bd.Models
         public string InstituteStatisticsGirlsStudent { get; set; }
 
 
-        public virtual ICollection<Instituitions> Instituition { get; set; }
+        public int ? InstituitionId { get; set; }
+        public virtual Instituitions Instituitions { get; set; }
+
+
+        //public virtual ICollection<Instituitions> Instituition { get; set; }
 
 
         public InstituteStatistics()

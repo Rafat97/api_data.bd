@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -16,19 +15,20 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ViewBoardResults
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.BoardResults.ToListAsync());
+            var boardResults = db.BoardResults.Include(b => b.Instituitions);
+            return View(boardResults.ToList());
         }
 
         // GET: ViewBoardResults/Details/5
-        public async Task<ActionResult> Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoardResult boardResult = await db.BoardResults.FindAsync(id);
+            BoardResult boardResult = db.BoardResults.Find(id);
             if (boardResult == null)
             {
                 return HttpNotFound();
@@ -39,65 +39,69 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults/Create
         public ActionResult Create()
         {
+            ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName");
             return View();
         }
 
         // POST: ViewBoardResults/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "BoardResultId,Year,ResultType,ExamAttendence,GpaFiveStudentNumber,FailStudentNumber")] BoardResult boardResult)
+        public ActionResult Create([Bind(Include = "BoardResultId,Year,ResultType,ExamAttendence,GpaFiveStudentNumber,FailStudentNumber,InstituitionId")] BoardResult boardResult)
         {
             if (ModelState.IsValid)
             {
                 db.BoardResults.Add(boardResult);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName", boardResult.InstituitionId);
             return View(boardResult);
         }
 
         // GET: ViewBoardResults/Edit/5
-        public async Task<ActionResult> Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoardResult boardResult = await db.BoardResults.FindAsync(id);
+            BoardResult boardResult = db.BoardResults.Find(id);
             if (boardResult == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName", boardResult.InstituitionId);
             return View(boardResult);
         }
 
         // POST: ViewBoardResults/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "BoardResultId,Year,ResultType,ExamAttendence,GpaFiveStudentNumber,FailStudentNumber")] BoardResult boardResult)
+        public ActionResult Edit([Bind(Include = "BoardResultId,Year,ResultType,ExamAttendence,GpaFiveStudentNumber,FailStudentNumber,InstituitionId")] BoardResult boardResult)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(boardResult).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName", boardResult.InstituitionId);
             return View(boardResult);
         }
 
         // GET: ViewBoardResults/Delete/5
-        public async Task<ActionResult> Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoardResult boardResult = await db.BoardResults.FindAsync(id);
+            BoardResult boardResult = db.BoardResults.Find(id);
             if (boardResult == null)
             {
                 return HttpNotFound();
@@ -108,11 +112,11 @@ namespace api_data_bd.Controllers
         // POST: ViewBoardResults/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            BoardResult boardResult = await db.BoardResults.FindAsync(id);
+            BoardResult boardResult = db.BoardResults.Find(id);
             db.BoardResults.Remove(boardResult);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
