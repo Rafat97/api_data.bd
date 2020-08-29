@@ -263,6 +263,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituitionsAddressesController.cs" />
     <Compile Include="Controllers\InstituitionsController.cs" />
+    <Compile Include="Controllers\InstituteStatisticsController.cs" />
     <Compile Include="Controllers\MainStudentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituitions.cs" />
     <Compile Include="Models\InstituitionsAddress.cs" />
+    <Compile Include="Models\InstituteStatistics.cs" />
     <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
