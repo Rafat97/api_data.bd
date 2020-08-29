@@ -1,0 +1,58 @@
+﻿@model api_data_bd.Models.BoardResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BoardResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamAttendence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamAttendence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GpaFiveStudentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GpaFiveStudentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FailStudentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FailStudentNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BoardResultId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

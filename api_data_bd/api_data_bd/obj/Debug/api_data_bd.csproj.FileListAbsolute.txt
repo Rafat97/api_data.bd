@@ -434,3 +434,6 @@ C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.pdb
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
+D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Data.EntityFramework.xml
+D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Web.xml
+D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache

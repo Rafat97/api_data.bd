@@ -1,0 +1,57 @@
+﻿@model IEnumerable<api_data_bd.Models.BoardResult>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamAttendence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GpaFiveStudentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FailStudentNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamAttendence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GpaFiveStudentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FailStudentNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BoardResultId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BoardResultId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BoardResultId })
+        </td>
+    </tr>
+}
+
+</table>

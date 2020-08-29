@@ -1,0 +1,64 @@
+﻿@model api_data_bd.Models.BoardResult
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BoardResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamAttendence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamAttendence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GpaFiveStudentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GpaFiveStudentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FailStudentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FailStudentNumber)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
