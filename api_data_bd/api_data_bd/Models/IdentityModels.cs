@@ -56,5 +56,7 @@ namespace api_data_bd.Models
 
         public System.Data.Entity.DbSet<api_data_bd.Models.InstituteStatistics> InstituteStatistics { get; set; }
 
+        public System.Data.Entity.DbSet<api_data_bd.Models.AdminUsers> AdminUsers { get; set; }
+
     }
 }

@@ -17,12 +17,3 @@ C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\D
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\predeploy.sql
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.dll
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dacpac
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.dll
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\bin\Debug\api_data_bd_database.pdb
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\Model.xml
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\refactor.xml
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\postdeploy.sql
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\predeploy.sql
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.dll
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd_database\obj\Debug\api_data_bd_database.pdb
