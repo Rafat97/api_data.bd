@@ -27,16 +27,17 @@
 .card {
     background-color: rgba(120, 193, 155, 0.77);
     border-radius:15px;
-    margin-top:10px;
-    margin-bottom:10px;
-    margin-left:15px;
-    margin-right:20px;
+    border:1px solid black;
     padding-top:10px;
     padding-bottom:10px;
+    padding-left:20px;
+    margin-bottom:40px;
+    
 }
 
 .card-text{
     color:black;
+    margin-bottom:40px;
 }
 
 

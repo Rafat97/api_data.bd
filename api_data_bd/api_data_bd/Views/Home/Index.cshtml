@@ -6,41 +6,54 @@
 
 </div>
 <div class="row">
-    <div class="col-md-12 card">
-        <h2>Instituitions</h2>
-        <p class="card-text">
-            View, Add, Delete and Update institute data.
-        </p>
-        <p class="pull-right">@Html.ActionLink("View", "Index", "ViewInstituitions", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+    <div class="col-md-6">
+        <div class="card">
+
+            <h2>Instituitions</h2>
+            <p class="card-text">
+                View, Add, Delete and Update institute data.
+            </p>
+            <p>@Html.ActionLink("View", "Index", "ViewInstituitions", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+
+        </div>
     </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+
+            <h2>Instituite Addresses</h2>
+            <p class="card-text">View, Add, Delete and Update institute Addresses.</p>
+            <p>@Html.ActionLink("View", "Index", "ViewInstituitionsAddresses", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+
+        </div>
+    </div>
+
 </div>
+
 
 <div class="row">
 
-    <div class="col-md-12 card">
-        <h2>Instituite Addresses</h2>
-        <p class="card-text">View, Add, Delete and Update institute Addresses.</p>
-        <p class="pull-right">@Html.ActionLink("View", "Index", "ViewInstituitionsAddresses", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+    <div class="col-md-6">
+        <div class="card">
+
+            <h2>Institute Statistics</h2>
+            <p class="card-text">View, Add, Delete and Update Statistics of institutes.</p>
+            <p>@Html.ActionLink("View", "Index", "ViewInstituteStatistics", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+
+        </div>
+    </div>
+
+   
+    <div class="col-md-6">
+        <div class="card">
+
+            <h2>Board Results</h2>
+            <p class="card-text">View, Add, Delete and Update institute board results.</p>
+            <p>@Html.ActionLink("View", "Index", "ViewBoardResults", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
+
+        </div>
     </div>
 
 </div>
 
-<div class="row">
-
-    <div class="col-md-12 card">
-        <h2>Institute Statistics</h2>
-        <p class="card-text">View, Add, Delete and Update Statistics of institutes.</p>
-        <p class="pull-right">@Html.ActionLink("View", "Index", "ViewInstituteStatistics", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
-    </div>
-
-</div>
-
-<div class="row">
-
-    <div class="col-md-12 card">
-        <h2>Board Results</h2>
-        <p class="card-text">View, Add, Delete and Update institute board results.</p>
-        <p class="pull-right">@Html.ActionLink("View", "Index", "ViewBoardResults", new { area = "" }, new { @class = "btn btn-info btn-sm" })</p>
-    </div>
-
-</div>
