@@ -289,7 +289,6 @@ C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Data.EntityFramework.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Web.xml
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Mvc.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.dll.config
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.pdb
@@ -409,6 +408,7 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Net
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Helpers.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Http.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Http.WebHost.xml
+C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Mvc.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Optimization.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Razor.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.WebPages.xml
@@ -429,11 +429,9 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Http.Owin.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.InitialCreate.resources
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.Instituition.resources
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.GenerateResource.cache
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CoreCompileInputs.cache
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CopyComplete
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.pdb
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
+C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.InitialMigration.resources
+C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.GenerateResource.cache
