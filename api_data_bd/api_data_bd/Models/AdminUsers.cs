@@ -27,7 +27,7 @@ namespace api_data_bd.Models
         [StringLength(100)]
         [Index(IsUnique = true)]
         [Remote("IsUserExists", "Validation", ErrorMessage= "Email already in use")]  
-        [AdminUserModelValidation]
+        [EmailUnique]
         public string AdminUsersEmail { get; set; }
 
         [Required]
