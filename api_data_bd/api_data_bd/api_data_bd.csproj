@@ -271,6 +271,7 @@
     <Compile Include="Controllers\ViewBoardResultsController.cs" />
     <Compile Include="Controllers\ViewInstituitionsAddressesController.cs" />
     <Compile Include="Controllers\ViewInstituitionsController.cs" />
+    <Compile Include="Controllers\ViewInstituteStatisticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -371,6 +372,12 @@
     <Content Include="Views\ViewBoardResults\Details.cshtml" />
     <Content Include="Views\ViewBoardResults\Edit.cshtml" />
     <Content Include="Views\ViewBoardResults\Index.cshtml" />
+    <Content Include="Views\ViewInstituteStatistics\Create.cshtml" />
+    <Content Include="Views\ViewInstituteStatistics\Delete.cshtml" />
+    <Content Include="Views\ViewInstituteStatistics\Details.cshtml" />
+    <Content Include="Views\ViewInstituteStatistics\Edit.cshtml" />
+    <Content Include="Views\ViewInstituteStatistics\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

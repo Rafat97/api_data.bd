@@ -1,0 +1,63 @@
+﻿@model IEnumerable<api_data_bd.Models.InstituteStatistics>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Instituitions.InstituitionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsMaleTeacher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsFemaleTeacher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsBoysStudent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsGirlsStudent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instituitions.InstituitionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituteStatisticsMaleTeacher)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituteStatisticsFemaleTeacher)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituteStatisticsYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituteStatisticsBoysStudent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituteStatisticsGirlsStudent)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InstituteStatisticsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InstituteStatisticsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InstituteStatisticsId })
+        </td>
+    </tr>
+}
+
+</table>

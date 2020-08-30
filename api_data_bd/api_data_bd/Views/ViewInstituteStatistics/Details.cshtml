@@ -1,0 +1,66 @@
+﻿@model api_data_bd.Models.InstituteStatistics
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InstituteStatistics</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Instituitions.InstituitionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instituitions.InstituitionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsMaleTeacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteStatisticsMaleTeacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsFemaleTeacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteStatisticsFemaleTeacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteStatisticsYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsBoysStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteStatisticsBoysStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstituteStatisticsGirlsStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstituteStatisticsGirlsStudent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstituteStatisticsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
