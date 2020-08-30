@@ -7,7 +7,38 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top:10px;
+    background-image: url('~\image\backgroundImage.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+
+.h2-content {
+    font-size: 40px;
+    color:#630505;
+}
+
+.h3-content {
+    text-align: center;
+}
+
+.card {
+    background-color: rgba(120, 193, 155, 0.77);
+    border-radius:15px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:15px;
+    margin-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.card-text{
+    color:black;
+}
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
