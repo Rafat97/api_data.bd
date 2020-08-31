@@ -7,8 +7,8 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    margin-top:10px;
-    background-image: url('~\image\backgroundImage.jpeg');
+    margin-top: 10px;
+    background-image: url(~\image\backgroundImage.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -17,7 +17,7 @@
 
 .h2-content {
     font-size: 40px;
-    color:#630505;
+    color: #630505;
 }
 
 .h3-content {
@@ -26,20 +26,29 @@
 
 .card {
     background-color: rgba(120, 193, 155, 0.77);
-    border-radius:15px;
-    border:1px solid black;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:20px;
-    margin-bottom:40px;
-    
+    border-radius: 15px;
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    transition: transform .2s;
 }
 
-.card-text{
-    color:black;
-    margin-bottom:40px;
+.card-text {
+    color: black;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
+.card-header {
+    text-align: center;
+}
+
+
+    .card:hover {
+        transform: scale(1.1);
+    }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
