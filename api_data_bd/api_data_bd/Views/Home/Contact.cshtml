@@ -1,7 +1,128 @@
 ﻿
 @{
     ViewBag.Title = "Contact";
+    Layout = null;
 }
 
-<h2>Contact</h2>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Contact Form with Yellow Background</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Courgette|Pacifico:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+</head>
+
+<style>
+
+    body {
+        color: #000;
+        background-color: #fcda2e !important;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .contact-form {
+        padding: 50px;
+        margin: 30px auto;
+    }
+
+        .contact-form h1 {
+            font-size: 42px;
+            font-family: 'Pacifico', sans-serif;
+            margin: 0 0 50px;
+            text-align: center;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form .form-control, .contact-form .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+
+        .contact-form .form-control {
+            border-color: #e2c705;
+        }
+
+            .contact-form .form-control:focus {
+                border-color: #d8b012;
+                box-shadow: 0 0 8px #dcae10;
+            }
+
+        .contact-form .btn-primary {
+            min-width: 250px;
+            color: #fcda2e;
+            background: #000;
+            margin-top: 20px;
+            border: none;
+        }
+
+            .contact-form .btn-primary:hover {
+                color: #fff;
+            }
+
+            .contact-form .btn-primary i {
+                margin-right: 5px;
+            }
+
+        .contact-form label {
+            opacity: 0.9;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+    .bs-example {
+        margin: 20px;
+    }
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 m-auto">
+                <div class="contact-form">
+                    <h1>Get in Touch</h1>
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSubject">Subject</label>
+                            <input type="text" class="form-control" id="inputSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMessage">Message</label>
+                            <textarea class="form-control" id="inputMessage" rows="5" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

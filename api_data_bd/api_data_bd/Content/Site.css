@@ -1,6 +1,21 @@
-﻿body {
-    padding-top: 50px;
+﻿/*body::after {
     padding-bottom: 20px;
+    background-image: url("/image/backgroundImage.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}*/
+
+body::after {
+    content: "";
+   /* background: url("/image/backgroundImage.jpeg");*/
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -8,10 +23,6 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 10px;
-    background-image: url(~\image\backgroundImage.jpeg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 
