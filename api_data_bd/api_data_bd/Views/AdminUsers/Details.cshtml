@@ -1,0 +1,42 @@
+﻿@model api_data_bd.Models.AdminUsers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdminUsers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminUsersName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminUsersName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminUsersEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminUsersEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminUsersPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminUsersPassword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdminUsersId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

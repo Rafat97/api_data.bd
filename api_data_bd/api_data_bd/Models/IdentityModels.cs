@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -20,6 +21,9 @@ namespace api_data_bd.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+
+
         public ApplicationDbContext()
             : base("api_data_bd_database_sql_local", throwIfV1Schema: false)
         {
@@ -28,6 +32,18 @@ namespace api_data_bd.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ApplicationUser>().ToTable("OAUTH_Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("OAUTH_Roles");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("OAUTH_UserClaims");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("OAUTH_UserLogins");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("OAUTH_UserRoles");
+
         }
 
         public System.Data.Entity.DbSet<api_data_bd.Models.Students> Students { get; set; }
@@ -39,5 +55,8 @@ namespace api_data_bd.Models
         public System.Data.Entity.DbSet<api_data_bd.Models.BoardResult> BoardResults { get; set; }
 
         public System.Data.Entity.DbSet<api_data_bd.Models.InstituteStatistics> InstituteStatistics { get; set; }
+
+        public System.Data.Entity.DbSet<api_data_bd.Models.AdminUsers> AdminUsers { get; set; }
+
     }
 }
