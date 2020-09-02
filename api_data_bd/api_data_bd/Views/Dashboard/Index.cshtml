@@ -1,0 +1,221 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+}
+
+<style>
+        .ml1 {
+            font-weight: 900;
+            font-size: 3.5em;
+        }
+
+        .ml1 .letter {
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        .ml1 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+        }
+
+        .ml1 .line {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            transform-origin: 0 0;
+        }
+
+        .ml1 .line1 {
+            top: 0;
+        }
+
+        .ml1 .line2 {
+            bottom: 0;
+        }
+</style>
+
+
+@section content_wrapper {
+
+    <style>
+        .ml4 {
+            position: relative;
+            font-weight: 900;
+            font-size: 7.5vh;
+        }
+
+            .ml4 .letters {
+                position: inherit;
+                margin: auto;
+                left: 0;
+                top: 0.3em;
+                right: 0;
+                opacity: 0;
+            }
+
+        .body-content {
+            height: 100vh;
+        }
+    </style>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Welcome Animation -->
+        <section alt="Welcome Animation">
+            <div class="my-5 text-center">
+                <h1 class="ml4">
+                    <p class="letters letters-1"> HI ! </p>
+                    <p class="letters letters-2"> Rafat Haque </p>
+                    <p class="letters letters-3">Welcome To Dashboard !</p>
+                </h1>
+            </div>
+        </section>
+        <!-- End Welcome Animation -->
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between my-4">
+            <h1 class="h3 mb-0 text-gray-800">Summary</h1>
+        </div>
+
+        <!-- Content Information -->
+        <section alt="Welcome Animation" data-aos="fade-in">
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card border-left-primary shadow h-100 p-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Number of Instruction </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">@db.Instituitions.Count()</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-school fa-2x text-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card border-left-success shadow h-100 p-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Number of User </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">@db.AdminUsers.Count()</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-user-alt fa-2x text-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2"></div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
+        <!-- /.container-fluid -->
+
+        <script>
+            var ml4 = {};
+            ml4.opacityIn = [0, 1];
+            ml4.scaleIn = [0.2, 1];
+            ml4.scaleOut = 3;
+            ml4.durationIn = 800;
+            ml4.durationOut = 600;
+            ml4.delay = 500;
+
+            anime.timeline({ loop: true })
+                .add({
+                    targets: '.ml4 .letters-1',
+                    opacity: ml4.opacityIn,
+                    scale: ml4.scaleIn,
+                    duration: ml4.durationIn
+                }).add({
+                    targets: '.ml4 .letters-1',
+                    opacity: 0,
+                    scale: ml4.scaleOut,
+                    duration: ml4.durationOut,
+                    easing: "easeInExpo",
+                    delay: ml4.delay
+                }).add({
+                    targets: '.ml4 .letters-2',
+                    opacity: ml4.opacityIn,
+                    scale: ml4.scaleIn,
+                    duration: ml4.durationIn
+                }).add({
+                    targets: '.ml4 .letters-2',
+                    opacity: 0,
+                    scale: ml4.scaleOut,
+                    duration: ml4.durationOut,
+                    easing: "easeInExpo",
+                    delay: ml4.delay
+                }).add({
+                    targets: '.ml4 .letters-3',
+                    opacity: ml4.opacityIn,
+                    scale: ml4.scaleIn,
+                    duration: ml4.durationIn
+                }).add({
+                    targets: '.ml4 .letters-3',
+                    opacity: 0,
+                    scale: ml4.scaleOut,
+                    duration: ml4.durationOut,
+                    easing: "easeInExpo",
+                    delay: ml4.delay
+                }).add({
+                    targets: '.ml4',
+                    opacity: 0,
+                    duration: 500,
+                    delay: 500
+                });
+        </script>
+
+}
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+<!-- Logout Modal-->
+@*
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
+
