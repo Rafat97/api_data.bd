@@ -303,6 +303,10 @@
     <Compile Include="Utiles\Validation\EmailUnique.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\api_data_bd_database_sql_localDB.mdf" />
+    <Content Include="App_Data\api_data_bd_database_sql_localDB_log.ldf">
+      <DependentUpon>api_data_bd_database_sql_localDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -2089,7 +2093,6 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Validation\" />
   </ItemGroup>
   <ItemGroup>
