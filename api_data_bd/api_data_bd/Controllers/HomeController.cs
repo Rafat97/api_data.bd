@@ -18,7 +18,7 @@ namespace api_data_bd.Controllers
         public ActionResult Contact()
         {
             ViewBag.Title = "Contact Page";
-
+            
             return View();
         }
     }
