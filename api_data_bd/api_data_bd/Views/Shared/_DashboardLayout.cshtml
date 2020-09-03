@@ -14,10 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    @RenderSection("links_cdn", required: false)
 
     <link href="~/Content/css/admin.css" rel="stylesheet">
-
-
 
 </head>
 <body id="page-top">
@@ -47,8 +46,8 @@
                 <hr class="sidebar-divider my-0">
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link"  href="@Url.Action("Index","Dashboard")">
+                <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "Dashboard" ? "active" : "") ">
+                    <a class="nav-link" href="@Url.Action("Index","Dashboard")">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
@@ -63,27 +62,27 @@
                 </div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="@Url.Action("Index","ViewInstituitionsAddresses")">
                         <i class="fas fa-fw fa-map-marker-alt"></i>
                         <span>Address</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "ViewInstituitions" ? "active" : "")">
+                    <a class="nav-link" href="@Url.Action("Index","ViewInstituitions")">
                         <i class="fas fa-fw fa-school"></i>
                         <span>Information</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="@Url.Action("Index","ViewBoardResults")">
                         <i class="fas fa-fw fa-chart-line"></i>
                         <span>Board Results</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="@Url.Action("Index","ViewInstituteStatistics")">
                         <i class="fas fa-fw fa-chart-pie"></i>
                         <span>Statistices</span>
                     </a>
@@ -166,6 +165,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+   
+    @RenderSection("scripts_cdn", required: false)
 
     <script src="~/Content/js/admin.js"></script>
 
