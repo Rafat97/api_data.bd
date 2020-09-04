@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Action;
 
 namespace api_data_bd.Controllers
 {
+    [AdminAuthrization]
     public class ViewBoardResultsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,6 +19,10 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults
         public ActionResult Index()
         {
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+
             var boardResults = db.BoardResults.Include(b => b.Instituitions);
             return View(boardResults.ToList());
         }
@@ -24,6 +30,11 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults/Details/5
         public ActionResult Details(int? id)
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +50,11 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults/Create
         public ActionResult Create()
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+
             ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName");
             return View();
         }
@@ -64,6 +80,11 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults/Edit/5
         public ActionResult Edit(int? id)
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -97,6 +118,11 @@ namespace api_data_bd.Controllers
         // GET: ViewBoardResults/Delete/5
         public ActionResult Delete(int? id)
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser =  db.AdminUsers.Find(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

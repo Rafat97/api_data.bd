@@ -299,6 +299,8 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utiles\Action\AdminAuthrization.cs" />
+    <Compile Include="Utiles\Form\LoginForm.cs" />
     <Compile Include="Utiles\Static\AppDatabase.cs" />
     <Compile Include="Utiles\Validation\EmailUnique.cs" />
   </ItemGroup>
@@ -2093,6 +2095,7 @@
     <Content Include="Views\AdminUsers\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\AdminUsers\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Validation\" />

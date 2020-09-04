@@ -8,9 +8,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Action;
 
 namespace api_data_bd.Controllers
 {
+    [AdminAuthrization]
     public class ViewInstituitionsAddressesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,12 +20,21 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses
         public async Task<ActionResult> Index()
         {
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+
             return View(await db.InstituitionsAddresses.ToListAsync());
         }
 
         // GET: ViewInstituitionsAddresses/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +50,10 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses/Create
         public ActionResult Create()
         {
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+
             return View();
         }
 
@@ -62,6 +77,11 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
+
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -93,6 +113,10 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
+            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
+            int adminUserId = (int)Session["AdminUserID"];
+            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

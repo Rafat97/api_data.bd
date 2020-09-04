@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Form;
 
 namespace api_data_bd.Controllers
 {
@@ -18,6 +19,36 @@ namespace api_data_bd.Controllers
         public ActionResult Index()
         {
             return View(db.AdminUsers.ToList());
+        }
+
+        // GET: AdminUsers/Login
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: AdminUsers/Login
+        [HttpPost]
+        public ActionResult Login([Bind(Include = "")] LoginForm loginForm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var data = db.AdminUsers
+                   .Where(us => us.AdminUsersEmail == loginForm.Email)
+                   .Where(us => us.AdminUsersPassword == loginForm.Password)
+                   .Single();
+                    Session["AdminUserID"] = data.AdminUsersId;
+                    return RedirectToAction("Index","DashBoard");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Sorry No user found.");
+                }
+            }
+            return View(loginForm);
         }
 
         // GET: AdminUsers/Details/5
@@ -48,11 +79,14 @@ namespace api_data_bd.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AdminUsersId,AdminUsersName,AdminUsersEmail,AdminUsersPassword")] AdminUsers adminUsers)
         {
+            
             if (ModelState.IsValid)
             {
                 db.AdminUsers.Add(adminUsers);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                Session["AdminUserID"] = adminUsers.AdminUsersId;
+
+                return RedirectToAction("Index", "Dashboard");
             }
 
             return View(adminUsers);

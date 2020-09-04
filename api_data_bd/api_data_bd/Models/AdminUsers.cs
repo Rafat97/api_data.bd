@@ -17,9 +17,11 @@ namespace api_data_bd.Models
         //public Guid Unique { get; set; }
 
         [Key]
+        [Display(Name = "Admin User Id")]
         public int AdminUsersId { get; set; }
 
         [Required]
+        [Display(Name = "Admin User Name")]
         public string AdminUsersName { get; set; }
 
         [Required]
@@ -28,10 +30,12 @@ namespace api_data_bd.Models
         [Index(IsUnique = true)]
         [Remote("IsUserExists", "Validation", ErrorMessage= "Email already in use")]  
         [EmailUnique]
+        [Display(Name = "Admin User Email")]
         public string AdminUsersEmail { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Admin User Password")]
         public string AdminUsersPassword { get; set; }
 
 
