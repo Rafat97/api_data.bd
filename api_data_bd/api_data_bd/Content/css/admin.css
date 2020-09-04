@@ -7537,12 +7537,16 @@ button.bg-dark:focus {
   white-space: normal;
 }
 
+/*
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2) !important;
 }
 
 .shadow {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+.shadow-dark {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
 }
 
 .shadow-lg {
@@ -7552,6 +7556,7 @@ button.bg-dark:focus {
 .shadow-none {
   box-shadow: none !important;
 }
+    */
 
 .w-25 {
   width: 25% !important;

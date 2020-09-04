@@ -1956,6 +1956,8 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\vendor\sweetalert2\dark.min.css" />
+    <Content Include="Content\vendor\sweetalert2\sweetalert2.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

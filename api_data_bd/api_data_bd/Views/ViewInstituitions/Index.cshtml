@@ -2,147 +2,193 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = null;
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
 }
 
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@section links_cdn {
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+}
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css" />
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script>
-
-    <title>API DATA.BD</title>
-</head>
-
-<body>
-
-    <header>
-
-        <div class="container">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">API DATA.BD</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-
-                        <a class="navbar-brand" href="@Url.Action("Contact","Home")">Contact Us</a>
-
-                    </form>
-                </div>
-            </nav>
-
-        </div>
-    </header>
-
-   
+@section content_wrapper {
 
 
-    <div class="container my-5">
+    <style>
+        tr:hover {
+            background-color: var(--dark-2) !important;
+        }
 
-        <div class="my-5 text-center">
-            <a href="@Url.Action("Create","ViewInstituitions")">
-                <button class="btn btn-primary">
-                    Create New
-                </button>
-            </a>
-        </div>
-        <table id="instituite" class="display" style="width:100%">
-            <thead>
+        .swal2-modal {
+            background-color: var(--dark)
+        }
 
-                <tr>
-                    <th>
+        .swal2-title {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
 
-                        @Html.DisplayNameFor(model => model.InstituitionAddress.InstituitionAddressUnion)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionEstablishment)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionType)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionEiin)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionPhoneNumber)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionManagementType)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InstituitionEducationLevel)
-                    </th>
-                    <th> Action </th>
-                </tr>
+        .swal2-container.in {
+            background-color: rgba(43, 165, 137, 0.45)
+        }
+    </style>
+    <div class="container my-5 text-center ">
+        <h1 style="line-height: 1em;  font-weight: 900">All Instituitions Informations</h1>
+    </div>
+    <div class="container-fluid my-5 " data-aos="fade-in">
+        <div class="container bg-dark pt-1 pb-4 shadow rounded">
+            <div class="my-3 text-center">
+                <a href="@Url.Action("Create","ViewInstituitions")">
+                    <button class="btn btn-primary py-2">
+                        <i class="fas fa-plus-circle"></i> Add New Item
+                    </button>
+                </a>
+            </div>
+            <table id="instituite" class="display table table-striped table-condensed table-hover" style="width:100%">
+                <thead class="thead-dark">
 
-
-            </thead>
-            <tbody>
-
-                @foreach (var item in Model)
-                {
                     <tr>
-                        <td>
-                           
-                            @Html.DisplayFor(modelItem => item.InstituitionAddress.InstituitionAddressUnion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionEstablishment)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionType)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionEiin)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionPhoneNumber)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionManagementType)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InstituitionEducationLevel)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.InstituitionId }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.InstituitionId }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.InstituitionId })
-                        </td>
+                        <th>#</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionAddress.InstituitionAddressUnion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionEstablishment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionEiin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionPhoneNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionManagementType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InstituitionEducationLevel)
+                        </th>
+                        <th> Action </th>
                     </tr>
-                }
 
-            </tbody>
-            <tfoot>
 
-            </tfoot>
-        </table>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionId)
+                            </td>
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.InstituitionAddress.InstituitionAddressUnion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionEstablishment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionEiin)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionPhoneNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionManagementType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstituitionEducationLevel)
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.InstituitionId } , new { @class = "text-white" })
+                                </button>
+                                @*
+                                    @Html.ActionLink("Details", "Details", new { id = item.InstituitionId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.InstituitionId })
+                                *@
+
+                                <button class="btn btn-primary Swal_custom_alert">Delete</button>
+
+                                <script>
+                                    $('.Swal_custom_alert').on('click', function (e) {
+                                        Swal.fire({
+                                            title: 'Are you sure you want to delete this!',
+                                            text: '',
+                                            icon: 'warning',
+                                            confirmButtonText: 'Delete',
+                                            cancelButtonText: "Cancel",
+                                            showCancelButton: true,
+                                            allowOutsideClick: false,
+                                            allowEscapeKey: false,
+                                        }).then(function (res) {
+                                            Swal.showLoading()
+                                            if (res.isConfirmed) {
+                                                swal.showLoading();
+                                                Swal.fire({
+                                                    title: 'Please Wait...',
+                                                    allowOutsideClick: false,
+                                                    allowEscapeKey: false,
+                                                    onBeforeOpen() {
+                                                        Swal.showLoading()
+                                                    },
+                                                })
+                                                const url = "@Url.Action("Delete", "ViewInstituitions", new { id = @item.InstituitionId })"
+
+                                                var form = $('#__AjaxAntiForgeryForm');
+                                                var token = $('input[name="__RequestVerificationToken"]', form).val();
+                                                var fd = new FormData();
+                                                fd.append("__RequestVerificationToken", token);
+                                                axios.post(url, fd)
+                                                    .then(function (response) {
+                                                        console.log(response);
+                                                        Swal.fire({
+                                                            title: "Your data is deleted successfully",
+                                                            icon: 'success',
+                                                        })
+                                                        location.reload();
+                                                    })
+                                                    .catch(function (error) {
+                                                        Swal.fire({
+                                                            title: error.message,
+                                                            icon: 'error',
+                                                        })
+                                                    });
+
+                                                console.log("then @item.InstituitionId")
+                                            }
+                                        });
+                                    });
+
+
+                                </script>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        </div>
     </div>
 
 
@@ -157,12 +203,14 @@
 
         });
     </script>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    @* <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+}
 
 
-</body>
-</html>
+@section scripts_cdn {
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script>
+    <script src="~/Content/vendor/sweetalert2/sweetalert2.min.js"></script>
+
+}
