@@ -35,7 +35,7 @@ body::after {
     text-align: center;
 }
 
-.card {
+.cardss {
     background-color: rgba(120, 193, 155, 0.77);
     border-radius: 15px;
     border: 1px solid black;
@@ -46,15 +46,7 @@ body::after {
     transition: transform .2s;
 }
 
-.card-text {
-    color: black;
-    margin-bottom: 40px;
-    text-align: center;
-}
 
-.card-header {
-    text-align: center;
-}
 
 
     .card:hover {

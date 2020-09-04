@@ -10,6 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/fontawesome.css">
     <link rel="stylesheet" href="~/Content/Site.css">
 
     <title>API DATA.BD</title>
@@ -62,14 +63,22 @@
 
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-5">
 
-                        <div class="card" onclick="window.location.href = '@Url.Action("Index","ViewInstituitions")'">
+                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituitions")'">
 
-                            <h2 class="card-header">Instituitions</h2>
-                            <p class="card-text">
-                                View, Add, Delete and Update institute data.
-                            </p>
+                            <div class="card-img-top bg-dark py-4">
+                                <i class="fas fa-school fa-3x" style="color:white;"></i>
+                            </div>
+
+                            <div class="card-body bg-secondary">                             
+
+                                <h2 class="card-title">Instituitions</h2>
+                                <p class="card-text">
+                                    View, Add, Delete and Update institute data.
+                                </p>
+
+                            </div>
 
 
                         </div>
@@ -77,11 +86,19 @@
                     </div>
 
 
-                    <div class="col-md-5">
-                        <div class="card" onclick="window.location.href = '@Url.Action("Index","ViewInstituitionsAddresses")'">
+                    <div class="col-md-5 mb-5">
+                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituitionsAddresses")'">
 
-                            <h2 class="card-header">Instituite Addresses</h2>
-                            <p class="card-text">View, Add, Delete and Update institute Addresses.</p>
+                            <div class="card-img-top bg-dark py-4">
+                                <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
+                            </div>
+
+                            <div class="card-body bg-secondary">
+
+                                <h2 class="card-title">Instituite Addresses</h2>
+                                <p class="card-text">View, Add, Delete and Update institute Addresses.</p>
+
+                            </div>
 
 
                         </div>
@@ -96,23 +113,39 @@
 
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-5">
-                        <div class="card" onclick="window.location.href = '@Url.Action("Index","ViewInstituteStatistics")'">
+                    <div class="col-md-5 mb-5">
+                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituteStatistics")'">
 
-                            <h2 class="card-header">Institute Statistics</h2>
-                            <p class="card-text">View, Add, Delete and Update Statistics of institutes.</p>
+                            <div class="card-img-top bg-dark py-4">
+                                <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
+                            </div>
 
+                            <div class="card-body bg-secondary">
+
+                                <h2 class="card-title">Institute Statistics</h2>
+                                <p class="card-text">View, Add, Delete and Update Statistics of institutes.</p>
+
+
+                            </div>
 
                         </div>
                     </div>
 
 
-                    <div class="col-md-5">
-                        <div class="card" onclick="window.location.href = '@Url.Action("Index","ViewBoardResults")'">
+                    <div class="col-md-5 mb-5">
+                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewBoardResults")'">
 
-                            <h2 class="card-header">Board Results</h2>
-                            <p class="card-text">View, Add, Delete and Update institute board results.</p>
+                            <div class="card-img-top bg-dark py-4">
+                                <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
+                            </div>
 
+                            <div class="card-body bg-secondary">
+
+                                <h2 class="card-title">Board Results</h2>
+                                <p class="card-text">View, Add, Delete and Update institute board results.</p>
+
+
+                            </div>
 
                         </div>
                     </div>
@@ -123,6 +156,35 @@
             </div>
 
         </div>
+
+       
+        <div class="container">
+            <footer class="mt-5">
+               <div class="container">
+                   <div class="row">
+
+                       <div class="col-md-6">
+                           <h3 class="mt-5">
+                               About Us
+                           </h3>
+                           <p>
+                               Drubojit Saha<br />
+                               Emdadul Haque<br />
+                               Mohammad Rakib - Uz - Zaman
+                           </p>
+                       </div>
+
+                       <div class="col-md-6">
+                           <div class="my-5">
+                               <a href="@Url.Action("Contact","Home")">Contact Us</a>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+            </footer>
+        </div>
+
     </div>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
