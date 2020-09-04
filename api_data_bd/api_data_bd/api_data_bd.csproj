@@ -302,6 +302,7 @@
     <Compile Include="Utiles\Action\AdminAuthrization.cs" />
     <Compile Include="Utiles\Form\LoginForm.cs" />
     <Compile Include="Utiles\Static\AppDatabase.cs" />
+    <Compile Include="Utiles\Static\AuthAdminUser.cs" />
     <Compile Include="Utiles\Validation\EmailUnique.cs" />
   </ItemGroup>
   <ItemGroup>

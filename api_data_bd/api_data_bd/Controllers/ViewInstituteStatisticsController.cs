@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
@@ -19,9 +20,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics
         public ActionResult Index()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             var instituteStatistics = db.InstituteStatistics.Include(i => i.Instituitions);
             return View(instituteStatistics.ToList());
@@ -30,9 +29,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Details/5
         public ActionResult Details(int? id)
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {
@@ -49,9 +46,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Create
         public ActionResult Create()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName");
             return View();
@@ -79,9 +74,7 @@ namespace api_data_bd.Controllers
         public ActionResult Edit(int? id)
         {
 
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {
@@ -116,9 +109,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Delete/5
         public ActionResult Delete(int? id)
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {

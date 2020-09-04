@@ -1,4 +1,5 @@
-﻿using System;
+﻿using api_data_bd.Utiles.Static;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +13,8 @@ namespace api_data_bd.Utiles.Action
     {
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            System.Diagnostics.Debug.WriteLine(HttpContext.Current.Session["AdminUserID"]);
-            if (HttpContext.Current.Session["AdminUserID"] == null)
+            if (!AuthAdminUser.isAdminLogIn())
             {
-                System.Diagnostics.Debug.WriteLine("AdminUserID null");
                 filterContext.Result = new RedirectToRouteResult(
 
                     new RouteValueDictionary
@@ -26,19 +25,38 @@ namespace api_data_bd.Utiles.Action
 
                     );
                 filterContext.HttpContext.Response.StatusCode = 404;
-                //filterContext.HttpContext.Response.End();
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("AdminUserID not null");
-                //Code HERE for page level authorization  
-
             }
            
         }
 
+    }
+    public class AdminAuthrizationRedirect : AuthorizeAttribute
+    {
+        private string Action;
+        private string Controller;
+        public AdminAuthrizationRedirect(string action , string controller)
+        {
+            this.Action = action;
+            this.Controller = controller;
+        }
+    
 
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            if (AuthAdminUser.isAdminLogIn())
+            {
+                filterContext.Result = new RedirectToRouteResult(
 
+                    new RouteValueDictionary
+                                       {
+                                       { "action", this.Action },
+                                       { "controller", this.Controller }
+                                       }
+
+                    );
+            }
+
+        }
 
     }
 }

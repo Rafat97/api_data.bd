@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
@@ -19,9 +20,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions
         public ActionResult Index()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
             var instituitions = db.Instituitions.Include(i => i.InstituitionAddress);
             return View(instituitions.ToList());
         }
@@ -44,9 +43,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Create
         public ActionResult Create()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             ViewBag.InstituitionAddressId = new SelectList(db.InstituitionsAddresses, "InstituitionAddressId", "InstituitionAddressUnion");
             return View();
@@ -73,9 +70,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Edit/5
         public ActionResult Edit(int? id)
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {
@@ -110,9 +105,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Delete/5
         public ActionResult Delete(int? id)
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {

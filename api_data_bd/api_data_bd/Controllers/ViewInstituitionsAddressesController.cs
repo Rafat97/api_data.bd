@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
@@ -20,9 +21,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses
         public async Task<ActionResult> Index()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             return View(await db.InstituitionsAddresses.ToListAsync());
         }
@@ -31,9 +30,7 @@ namespace api_data_bd.Controllers
         public async Task<ActionResult> Details(int? id)
         {
 
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {
@@ -50,9 +47,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses/Create
         public ActionResult Create()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             return View();
         }
@@ -78,9 +73,7 @@ namespace api_data_bd.Controllers
         public async Task<ActionResult> Edit(int? id)
         {
 
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {
@@ -113,9 +106,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitionsAddresses/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = await db.AdminUsers.FindAsync(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
             if (id == null)
             {

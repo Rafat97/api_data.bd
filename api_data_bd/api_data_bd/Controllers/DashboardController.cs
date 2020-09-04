@@ -1,5 +1,6 @@
 ﻿using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,13 @@ namespace api_data_bd.Controllers
         // GET: Dashboard
         public ActionResult Index()
         {
-            var db = api_data_bd.Utiles.Static.AppDatabase.getInstence().getDatabase();
-            int adminUserId = (int)Session["AdminUserID"];
-            ViewBag.currentAdminUser = db.AdminUsers.Find(adminUserId);
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
             return View();
         }
         public ActionResult Logout()
         {
-            Session["AdminUserID"] = null;
-            return RedirectToAction("Index", "Home");
+            AuthAdminUser.signOutAdminUser();
+            return RedirectToAction("Login", "AdminUsers");
         }
     }
 }
