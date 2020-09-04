@@ -117,7 +117,9 @@ namespace api_data_bd.Controllers
             Instituitions instituitions = db.Instituitions.Find(id);
             db.Instituitions.Remove(instituitions);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+           
+            return new HttpStatusCodeResult(HttpStatusCode.OK); ;
         }
 
         protected override void Dispose(bool disposing)

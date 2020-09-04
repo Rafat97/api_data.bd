@@ -9,16 +9,30 @@
 @section links_cdn {
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 }
 
 @section content_wrapper {
+
+
     <style>
         tr:hover {
             background-color: var(--dark-2) !important;
         }
+
+        .swal2-modal {
+            background-color: var(--dark)
+        }
+
+        .swal2-title {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .swal2-container.in {
+            background-color: rgba(43, 165, 137, 0.45)
+        }
     </style>
-    <div class="container my-5 text-center">
+    <div class="container my-5 text-center ">
         <h1 style="line-height: 1em;  font-weight: 900">All Instituitions Informations</h1>
     </div>
     <div class="container-fluid my-5 " data-aos="fade-in">
@@ -102,9 +116,69 @@
                                 @Html.DisplayFor(modelItem => item.InstituitionEducationLevel)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.InstituitionId }) |
-                              @* @Html.ActionLink("Details", "Details", new { id = item.InstituitionId }) | *@
-                                @Html.ActionLink("Delete", "Delete", new { id = item.InstituitionId })
+                                <button class="btn btn-primary">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.InstituitionId } , new { @class = "text-white" })
+                                </button>
+                                @*
+                                    @Html.ActionLink("Details", "Details", new { id = item.InstituitionId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.InstituitionId })
+                                *@
+
+                                <button class="btn btn-primary Swal_custom_alert">Delete</button>
+
+                                <script>
+                                    $('.Swal_custom_alert').on('click', function (e) {
+                                        Swal.fire({
+                                            title: 'Are you sure you want to delete this!',
+                                            text: '',
+                                            icon: 'warning',
+                                            confirmButtonText: 'Delete',
+                                            cancelButtonText: "Cancel",
+                                            showCancelButton: true,
+                                            allowOutsideClick: false,
+                                            allowEscapeKey: false,
+                                        }).then(function (res) {
+                                            Swal.showLoading()
+                                            if (res.isConfirmed) {
+                                                swal.showLoading();
+                                                Swal.fire({
+                                                    title: 'Please Wait...',
+                                                    allowOutsideClick: false,
+                                                    allowEscapeKey: false,
+                                                    onBeforeOpen() {
+                                                        Swal.showLoading()
+                                                    },
+                                                })
+                                                const url = "@Url.Action("Delete", "ViewInstituitions", new { id = @item.InstituitionId })"
+
+                                                var form = $('#__AjaxAntiForgeryForm');
+                                                var token = $('input[name="__RequestVerificationToken"]', form).val();
+                                                var fd = new FormData();
+                                                fd.append("__RequestVerificationToken", token);
+                                                axios.post(url, fd)
+                                                    .then(function (response) {
+                                                        console.log(response);
+                                                        Swal.fire({
+                                                            title: "Your data is deleted successfully",
+                                                            icon: 'success',
+                                                        })
+                                                        location.reload();
+                                                    })
+                                                    .catch(function (error) {
+                                                        Swal.fire({
+                                                            title: error.message,
+                                                            icon: 'error',
+                                                        })
+                                                    });
+
+                                                console.log("then @item.InstituitionId")
+                                            }
+                                        });
+                                    });
+
+
+                                </script>
+
                             </td>
                         </tr>
                     }
@@ -121,14 +195,14 @@
 
 
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#instituite').DataTable({
-                    responsive: true
-                });
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#instituite').DataTable({
+                responsive: true
             });
-        </script>
+
+        });
+    </script>
 }
 
 
@@ -137,6 +211,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script>
-
+    <script src="~/Content/vendor/sweetalert2/sweetalert2.min.js"></script>
 
 }

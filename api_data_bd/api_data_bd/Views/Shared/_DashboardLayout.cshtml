@@ -20,8 +20,10 @@
 
 </head>
 <body id="page-top">
-
-
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
 
     <div class="container-fluid p-0 m-0">
         <!-- Page Wrapper -->
@@ -167,7 +169,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
-   
+
     @RenderSection("scripts_cdn", required: false)
 
     <script src="~/Content/js/admin.js"></script>
