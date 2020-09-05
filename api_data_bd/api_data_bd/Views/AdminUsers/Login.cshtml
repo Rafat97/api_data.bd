@@ -1,51 +1,138 @@
 ﻿@model api_data_bd.Utiles.Form.LoginForm
 
 @{
+    Layout = "~/Views/Shared/_DefaultAppLayout.cshtml";
+}
+@section links_cdn{
+    <link href="~/Content/css/admin.css" rel="stylesheet">
+}
+@section content_wrapper{
+    <style>
+        .body-100hv {
+            height: 100vh;
+        }
+    </style>
+    <div class="container-fluid bg-dark-2">
+        <div class="row body-100hv">
+            <div class="col-12 my-auto">
+
+                <div class="container text-center">
+                    <h1 style="font-weight:900;">Admin Login Form</h1>
+                </div>
+
+                <div class="container col-md-6">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control py-4", @placeholder = "Email Address" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="row" id="show_hide_password">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control  py-4" name="Password" placeholder="Password" aria-label="password" aria-describedby="password">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text " id="basic-addon2">
+                                                    <a href="#show_hide_password"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @*
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control py-4" } })
+                                        *@
+                                    </div>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $("#show_hide_password a").on('click', function (event) {
+                                                event.preventDefault();
+                                                if ($('#show_hide_password input').attr("type") == "text") {
+                                                    $('#show_hide_password input').attr('type', 'password');
+                                                    $('#show_hide_password i').addClass("fa-eye-slash");
+                                                    $('#show_hide_password i').removeClass("fa-eye");
+                                                } else if ($('#show_hide_password input').attr("type") == "password") {
+                                                    $('#show_hide_password input').attr('type', 'text');
+                                                    $('#show_hide_password i').removeClass("fa-eye-slash");
+                                                    $('#show_hide_password i').addClass("fa-eye");
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            @*
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            *@
+                            @{
+                                foreach (var key in ViewData.ModelState.Keys)
+                                {
+                                    foreach (var err in ViewData.ModelState[key].Errors)
+                                    {
+                                        if (key == "")
+                                        {
+
+
+                                            <script>
+                                            const Toast = Swal.mixin({
+                                                toast: true,
+                                                position: 'top-end',
+                                                showConfirmButton: false,
+                                                timer: 3000,
+                                                timerProgressBar: true,
+                                                onOpen: (toast) => {
+                                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                                }
+                                            })
+
+                                            Toast.fire({
+                                                icon: 'error',
+                                                title:"@err.ErrorMessage",
+                                            })
+                                            </script>
+                                        }
+
+                                    }
+                                }
+                            }
+
+
+
+                            <div class="form-group text-center">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary py-2 px-5 font-weight-bold"> Log In </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                @*
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                *@
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts_cdn{
 
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
-<body>
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>LoginForm</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-</body>
-</html>
+@section scripts{
+}

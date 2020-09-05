@@ -25,7 +25,7 @@ namespace api_data_bd.Controllers
         {
             ViewBag.Title = "404";
 
-            return Content("404");
+            return View();
         }
     }
 }

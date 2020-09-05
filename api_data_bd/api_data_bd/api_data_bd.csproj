@@ -2097,8 +2097,11 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\AdminUsers\Login.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Shared\_DefaultAppLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Utiles\Helper\" />
     <Folder Include="Views\Validation\" />
   </ItemGroup>
   <ItemGroup>
