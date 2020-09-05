@@ -21,5 +21,11 @@ namespace api_data_bd.Controllers
             
             return View();
         }
+        public ActionResult Error()
+        {
+            ViewBag.Title = "404";
+
+            return View();
+        }
     }
 }

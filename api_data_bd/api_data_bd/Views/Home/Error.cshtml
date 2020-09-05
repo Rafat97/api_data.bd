@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>404</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<style>
+    .body-100vh{
+        height : 100vh;
+    }
+    .ml9 {
+        position: relative;
+        font-weight: 900;
+        font-size: 4em;
+    }
+
+        .ml9 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+        }
+
+        .ml9 .letter {
+            transform-origin: 50% 100%;
+            display: inline-block;
+            line-height: 1em;
+        }
+</style>
+
+<body>
+
+    <div class="container-fluid d-flex body-100vh " style="background: aliceblue;">
+        <div class="container justify-content-center align-self-center text-center">
+            <div>
+                <h1 class="ml9">
+                    <span class="text-wrapper">
+                        <span class="letters">404</span>
+                    </span>
+                </h1>
+                <h2 class="m-0 p-0">The page you requested could not found</h2>
+                <div class="my-5">
+                    <a href="@Url.Action("Index","Home")">
+                        <button style="border-radius:1.25rem;" class="btn btn-outline-primary px-3 py-2 font-weight-bold"> Home Page </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml9 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml9 .letter',
+                scale: [0, 1],
+                duration: 1500,
+                elasticity: 600,
+                delay: (el, i) => 45 * (i + 1)
+            }).add({
+                targets: '.ml9',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+    </script>
+</body>
+
+
+</html>

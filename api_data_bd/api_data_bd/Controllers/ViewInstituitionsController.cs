@@ -7,9 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
+    [AdminAuthrization]
     public class ViewInstituitionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,6 +20,7 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions
         public ActionResult Index()
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
             var instituitions = db.Instituitions.Include(i => i.InstituitionAddress);
             return View(instituitions.ToList());
         }
@@ -39,6 +43,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Create
         public ActionResult Create()
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             ViewBag.InstituitionAddressId = new SelectList(db.InstituitionsAddresses, "InstituitionAddressId", "InstituitionAddressUnion");
             return View();
         }
@@ -64,6 +70,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -97,6 +105,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituitions/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

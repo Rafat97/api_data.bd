@@ -7,9 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
+    [AdminAuthrization]
     public class ViewInstituteStatisticsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,6 +20,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics
         public ActionResult Index()
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             var instituteStatistics = db.InstituteStatistics.Include(i => i.Instituitions);
             return View(instituteStatistics.ToList());
         }
@@ -24,6 +29,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +46,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Create
         public ActionResult Create()
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             ViewBag.InstituitionId = new SelectList(db.Instituitions, "InstituitionId", "InstituitionName");
             return View();
         }
@@ -64,6 +73,9 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Edit/5
         public ActionResult Edit(int? id)
         {
+
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -97,6 +109,8 @@ namespace api_data_bd.Controllers
         // GET: ViewInstituteStatistics/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

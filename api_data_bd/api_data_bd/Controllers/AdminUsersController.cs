@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using api_data_bd.Models;
+using api_data_bd.Utiles.Action;
+using api_data_bd.Utiles.Form;
+using api_data_bd.Utiles.Static;
 
 namespace api_data_bd.Controllers
 {
@@ -18,6 +21,40 @@ namespace api_data_bd.Controllers
         public ActionResult Index()
         {
             return View(db.AdminUsers.ToList());
+        }
+
+        // GET: AdminUsers/Login
+        [HttpGet]
+        [AdminAuthrizationRedirect( "Index", "Dashboard")]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: AdminUsers/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AdminAuthrizationRedirect("Index", "Dashboard")]
+        public ActionResult Login([Bind(Include = "")] LoginForm loginForm)
+        {
+            if (ModelState.IsValid)
+            {
+
+                    bool isHave = db.AdminUsers.Any(u => u.AdminUsersEmail == loginForm.Email 
+                        && u.AdminUsersPassword == loginForm.Password);
+                    if (!isHave)
+                        ModelState.AddModelError("", "Sorry no user found.");
+                    else {
+                        var data = db.AdminUsers
+                          .Where(us => us.AdminUsersEmail == loginForm.Email)
+                          .Where(us => us.AdminUsersPassword == loginForm.Password)
+                          .Single();
+                        AuthAdminUser.setUserInCookie(data.AdminUsersId + "");
+                        return RedirectToAction("Index", "DashBoard");
+                    }
+                   
+            }
+            return View(loginForm);
         }
 
         // GET: AdminUsers/Details/5
@@ -36,6 +73,7 @@ namespace api_data_bd.Controllers
         }
 
         // GET: AdminUsers/Create
+        [AdminAuthrizationRedirect("Index", "Dashboard")]
         public ActionResult Create()
         {
             return View();
@@ -46,13 +84,15 @@ namespace api_data_bd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AdminAuthrizationRedirect("Index", "Dashboard")]
         public ActionResult Create([Bind(Include = "AdminUsersId,AdminUsersName,AdminUsersEmail,AdminUsersPassword")] AdminUsers adminUsers)
         {
+            
             if (ModelState.IsValid)
             {
                 db.AdminUsers.Add(adminUsers);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
             return View(adminUsers);

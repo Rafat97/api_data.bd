@@ -299,7 +299,10 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utiles\Action\AdminAuthrization.cs" />
+    <Compile Include="Utiles\Form\LoginForm.cs" />
     <Compile Include="Utiles\Static\AppDatabase.cs" />
+    <Compile Include="Utiles\Static\AuthAdminUser.cs" />
     <Compile Include="Utiles\Validation\EmailUnique.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -313,7 +316,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\admin.css" />
-    <Content Include="Content\fontawesome.css" />
     <Content Include="Content\img\undraw_posting_photo.svg" />
     <Content Include="Content\js\demo\chart-area-demo.js" />
     <Content Include="Content\js\demo\chart-bar-demo.js" />
@@ -1961,20 +1963,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="image\backgroundImage1.jpeg" />
-    <Content Include="image\backgroundImage2.jpg" />
-    <Content Include="image\backgroundImage3.png" />
-    <Content Include="image\backgroundImage4.png" />
-    <Content Include="image\boardExamImage.jpg" />
-    <Content Include="image\FooterImage.jpg" />
-    <Content Include="image\FooterImage2.jpg" />
-    <Content Include="image\FooterImage3.jpg" />
-    <Content Include="image\FooterImage4.jpg" />
-    <Content Include="image\FooterImage5.jpg" />
-    <Content Include="image\instituteAddressImage.jpg" />
-    <Content Include="image\instituteAddressImage2.jpg" />
-    <Content Include="image\instituteImage.jpg" />
-    <Content Include="image\statisticsImage.jpg" />
+    <Content Include="image\backgroundImage.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -2049,9 +2038,6 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
-    <Content Include="webfonts\fa-brands-400.svg" />
-    <Content Include="webfonts\fa-regular-400.svg" />
-    <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2110,20 +2096,12 @@
     <Content Include="Views\AdminUsers\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
-    <Content Include="webfonts\fa-brands-400.eot" />
-    <Content Include="webfonts\fa-brands-400.ttf" />
-    <Content Include="webfonts\fa-brands-400.woff" />
-    <Content Include="webfonts\fa-brands-400.woff2" />
-    <Content Include="webfonts\fa-regular-400.eot" />
-    <Content Include="webfonts\fa-regular-400.ttf" />
-    <Content Include="webfonts\fa-regular-400.woff" />
-    <Content Include="webfonts\fa-regular-400.woff2" />
-    <Content Include="webfonts\fa-solid-900.eot" />
-    <Content Include="webfonts\fa-solid-900.ttf" />
-    <Content Include="webfonts\fa-solid-900.woff" />
-    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\AdminUsers\Login.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Shared\_DefaultAppLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Utiles\Helper\" />
     <Folder Include="Views\Validation\" />
   </ItemGroup>
   <ItemGroup>
