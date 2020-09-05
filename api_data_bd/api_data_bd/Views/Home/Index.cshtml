@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="~/Content/fontawesome.css">
     <link rel="stylesheet" href="~/Content/Site.css">
 
-    <title>API DATA.BD</title>
+    <title>HOME</title>
 </head>
 
 <body>
 
     <header>
 
-        <div class="container">
+       
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">API DATA.BD</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">API Warhouse</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,152 +40,179 @@
                 </div>
             </nav>
 
-        </div>
+      
     </header>
 
 
     <div class="container-fluid m-0 p-0">
 
-        <div class="jumbotron">
-            <h2 class="h2-content">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
-            <p class="lead">This is an API for Educational Institution of Bangladesh.</p>
+        <div class="row Cover p-5 text-center">
 
-            @Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })
+            <div class="col-md-12 mt-5">
 
-        </div>
+                <h2 class="text-white mt-5">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
+                <p class="lead text-white mb-5">This is an API for Educational Institution of Bangladesh.</p>
 
-        <div class="container">
-            <div class="container">
+                <span>@Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })</span>
 
-                <div class="row">
-
-                    <div class="col-md-1">
-
-                    </div>
-
-                    <div class="col-md-5 mb-5">
-
-                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituitions")'">
-
-                            <div class="card-img-top bg-dark py-4">
-                                <i class="fas fa-school fa-3x" style="color:white;"></i>
-                            </div>
-
-                            <div class="card-body bg-secondary">                             
-
-                                <h2 class="card-title">Instituitions</h2>
-                                <p class="card-text">
-                                    View, Add, Delete and Update institute data.
-                                </p>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-5 mb-5">
-                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituitionsAddresses")'">
-
-                            <div class="card-img-top bg-dark py-4">
-                                <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
-                            </div>
-
-                            <div class="card-body bg-secondary">
-
-                                <h2 class="card-title">Instituite Addresses</h2>
-                                <p class="card-text">View, Add, Delete and Update institute Addresses.</p>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-1"></div>
-
-                </div>
-
-
-                <div class="row">
-
-                    <div class="col-md-1"></div>
-
-                    <div class="col-md-5 mb-5">
-                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewInstituteStatistics")'">
-
-                            <div class="card-img-top bg-dark py-4">
-                                <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
-                            </div>
-
-                            <div class="card-body bg-secondary">
-
-                                <h2 class="card-title">Institute Statistics</h2>
-                                <p class="card-text">View, Add, Delete and Update Statistics of institutes.</p>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-5 mb-5">
-                        <div class="card text-center" onclick="window.location.href = '@Url.Action("Index","ViewBoardResults")'">
-
-                            <div class="card-img-top bg-dark py-4">
-                                <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
-                            </div>
-
-                            <div class="card-body bg-secondary">
-
-                                <h2 class="card-title">Board Results</h2>
-                                <p class="card-text">View, Add, Delete and Update institute board results.</p>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-1"></div>
-
-                </div>
             </div>
 
         </div>
 
-       
-        <div class="container">
-            <footer class="mt-5">
-               <div class="container">
-                   <div class="row">
+           <div class="row" style="background-color:#0b1e2f">
 
-                       <div class="col-md-6">
-                           <h3 class="mt-5">
-                               About Us
-                           </h3>
-                           <p>
-                               Drubojit Saha<br />
-                               Emdadul Haque<br />
-                               Mohammad Rakib - Uz - Zaman
-                           </p>
+               <div class="col-md-12  mt-5 ">
+                  
+                       <div class="container">
+
+                           <div class="row">
+                               <div class="col-md-12">
+
+                                   <h2 class="text-center text-white mb-5">The Data That You Can Get From This API </h2>
+
+                               </div>
+                           </div>
+
+                           <div class="row">
+
+                               <div class="col-md-3 mb-5">
+
+                                   <div class="card text-center bg-secondary h-100">
+
+                                       <img class="card-img h-100" src="~/image/instituteImage.jpg" alt="">
+
+                                       <div class="card-img-overlay">
+                                         @*  <div class="card-img-top pt-4">
+                                               <i class="fas fa-school fa-3x" style="color:white;"></i>
+                                           </div>*@
+
+                                           <div class="card-body">
+
+                                               <h2 class="card-title text-white mt-5">Instituitions</h2>
+
+                                           </div>
+                                       </div>
+
+                                   </div>
+
+                               </div>
+
+
+                               <div class="col-md-3 mb-5">
+                                   <div class="card text-center bg-secondary h-100">
+
+                                       <img class="card-img h-100" src="~/image/instituteAddressImage2.jpg" alt="">
+
+                                       <div class="card-img-overlay">
+                                           @*<div class="card-img-top pt-4">
+                                               <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
+                                           </div>*@
+
+                                           <div class="card-body">
+
+                                               <h2 class="card-title text-white mt-5">Instituite Addresses</h2>
+
+
+                                           </div>
+                                       </div>
+
+                                   </div>
+                               </div>
+
+                               <div class="col-md-3 mb-5">
+                                   <div class="card text-center bg-secondary h-100">
+
+                                       <div class="card-img-top pt-4">
+                                           <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
+                                       </div>
+
+                                       <div class="card-body">
+
+                                           <h2 class="card-title">Institute Statistics</h2>
+
+                                       </div>
+
+                                   </div>
+                               </div>
+
+                               <div class="col-md-3 mb-5">
+                                   <div class="card text-center bg-secondary h-100">
+
+                                       <div class="card-img-top pt-4">
+                                           <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
+                                       </div>
+
+                                       <div class="card-body">
+
+                                           <h2 class="card-title">Board Results</h2>
+
+                                       </div>
+
+                                   </div>
+                               </div>
+
+
+                           </div>
+
                        </div>
 
-                       <div class="col-md-6">
-                           <div class="my-5">
-                               <a href="@Url.Action("Contact","Home")">Contact Us</a>
+                   <div class="container mt-5">
+
+                       <div class="row">
+
+                           <div class="col-md-12">
+
+                               <h2 class="text-center text-white mb-4 mt-5">How To Use?</h2>
+                               <p class="text-white" style="font-size:larger;">Copy the correct URL and use it in your Application. You can also simply view the data in json format
+                                by using the URL in the search bar of the browser.
+                               </p>
+                               <p class="text-white mb-5" style="font-size:larger;">
+                                   For Example, The URL For getting Institution data is '/api/Instituitions'.<br />
+                                   You can get other URL from Explore section.
+                               </p>
+
                            </div>
+
                        </div>
 
                    </div>
-               </div>
-            </footer>
-        </div>
 
-    </div>
+
+               </div>
+
+           </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <footer style=" background: url('/image/FooterImage5.jpg');  background-repeat: no-repeat;  background-attachment: fixed; background-size: cover;">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <h3 class="mt-5 text-white">
+                                        About Us
+                                    </h3>
+                                    <p class="text-white">
+                                        Drubojit Saha<br />
+                                        Emdadul Haque<br />
+                                        Mohammad Rakib - Uz - Zaman
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="my-5">
+                                        <a class="text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

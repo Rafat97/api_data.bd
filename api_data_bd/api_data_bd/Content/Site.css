@@ -28,30 +28,30 @@ body::after {
 
 .h2-content {
     font-size: 40px;
-    color: #630505;
+    color: white;
 }
 
 .h3-content {
     text-align: center;
 }
 
-.cardss {
-    background-color: rgba(120, 193, 155, 0.77);
-    border-radius: 15px;
-    border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    margin-bottom: 40px;
-    transition: transform .2s;
+.Cover {
+    background: url('/image/backgroundImage4.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 600px;
 }
 
 
 
+    .HOVER{
 
-    .card:hover {
-        transform: scale(1.1);
     }
+
+        .HOVER:hover {
+            transform: scale(1.1);
+        }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
