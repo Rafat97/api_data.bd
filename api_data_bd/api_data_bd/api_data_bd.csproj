@@ -281,14 +281,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008300817541_InitialMigration.cs" />
-    <Compile Include="Migrations\202008300817541_InitialMigration.designer.cs">
-      <DependentUpon>202008300817541_InitialMigration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminUsers.cs" />
+    <Compile Include="Models\AdminUsersRegisterBindingModel.cs" />
     <Compile Include="Models\BoardResult.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituitions.cs" />
@@ -2099,6 +2096,7 @@
     <Content Include="Views\AdminUsers\Login.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Shared\_DefaultAppLayout.cshtml" />
+    <Content Include="Views\AdminUsers\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utiles\Helper\" />
@@ -2132,11 +2130,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008300817541_InitialMigration.resx">
-      <DependentUpon>202008300817541_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

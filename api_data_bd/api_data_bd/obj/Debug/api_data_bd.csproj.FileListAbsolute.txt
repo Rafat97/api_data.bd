@@ -288,6 +288,8 @@ D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_d
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.pdb
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
+C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.SqlServer.dll
+C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.dll.config
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\api_data_bd.pdb
@@ -343,7 +345,6 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\roslyn\VBC
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Antlr3.Runtime.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\BouncyCastle.Crypto.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.dll
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.SqlServer.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\FluentValidation.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Google.Protobuf.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\K4os.Compression.LZ4.dll
@@ -388,7 +389,6 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Ubiety.Dns.Core.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\WebGrease.dll
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Zstandard.Net.dll
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\EntityFramework.SqlServer.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\FluentValidation.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Google.Protobuf.xml
@@ -430,8 +430,6 @@ C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Http.Owin.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.InitialMigration.resources
-C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.GenerateResource.cache
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CoreCompileInputs.cache
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CopyComplete
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll

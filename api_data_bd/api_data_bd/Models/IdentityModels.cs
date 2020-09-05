@@ -26,6 +26,9 @@ namespace api_data_bd.Models
 
         public ApplicationDbContext()
             : base("api_data_bd_database_sql_local", throwIfV1Schema: false)
+        //DefaultConnection
+        //api_data_bd_database_sql_local
+        //NotificationConnection
         {
         }
         

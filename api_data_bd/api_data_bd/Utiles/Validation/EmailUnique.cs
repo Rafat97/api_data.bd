@@ -1,4 +1,5 @@
 ﻿using api_data_bd.Utiles.Static;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,12 +10,23 @@ namespace api_data_bd.Utiles.Validation
 {
     public class EmailUnique : ValidationAttribute
     {
+        private string className; 
+
+        public EmailUnique(string className = null)
+        {
+            this.className = className;
+        }
+
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var db = AppDatabase.getInstence().getDatabase();
             if(value != null)
             {
                 var className = validationContext.ObjectType.Name.Split('.').Last();
+                if (this.className != null)
+                {
+                    className = this.className;
+                }
                 var propertyName = validationContext.MemberName;
                 var parameterName = string.Format("@{0}", propertyName);
 

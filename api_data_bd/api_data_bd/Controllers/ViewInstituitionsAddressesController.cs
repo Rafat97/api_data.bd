@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
 using api_data_bd.Utiles.Static;
+using System.Web.Http.Description;
 
 namespace api_data_bd.Controllers
 {
@@ -104,15 +105,26 @@ namespace api_data_bd.Controllers
         }
 
         // GET: ViewInstituitionsAddresses/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+
+        [ResponseType(typeof(InstituitionsAddress))]
+        public async Task<ActionResult> Delete(int id)
         {
             ViewBag.currentAdminUser = AuthAdminUser.getAdminUser();
 
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             InstituitionsAddress instituitionsAddress = await db.InstituitionsAddresses.FindAsync(id);
+            /*
+            if (instituitionsAddress == null)
+            {
+                return NotFound();
+            }
+
+            db.InstituitionsAddresses.Remove(instituitionsAddress);
+            await db.SaveChangesAsync();
+            return Ok(instituitionsAddress);
+            */
+            db.InstituitionsAddresses.Remove(instituitionsAddress);
+            await db.SaveChangesAsync();
             if (instituitionsAddress == null)
             {
                 return HttpNotFound();
