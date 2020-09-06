@@ -20,7 +20,8 @@ namespace api_data_bd.Controllers
         // GET: AdminUsers
         public ActionResult Index()
         {
-            return View(db.AdminUsers.ToList());
+            return RedirectToAction("Login");
+            //return View(db.AdminUsers.ToList());
         }
 
         // GET: AdminUsers/Login
@@ -56,6 +57,35 @@ namespace api_data_bd.Controllers
             }
             return View(loginForm);
         }
+
+        // GET: AdminUsers/Login
+        [HttpGet]
+        [AdminAuthrizationRedirect("Index", "Dashboard")]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: AdminUsers/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AdminAuthrizationRedirect("Index", "Dashboard")]
+        public ActionResult Register([Bind(Include = "")] AdminUsersRegisterBindingModel registerForm)
+        {
+            if (ModelState.IsValid)
+            {
+                AdminUsers adminUsers = registerForm.getAdminUser();
+                db.AdminUsers.Add(adminUsers);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+
+            }
+            return View(registerForm);
+        }
+
+
+
+
 
         // GET: AdminUsers/Details/5
         public ActionResult Details(int? id)

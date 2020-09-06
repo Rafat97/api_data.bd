@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Web.Mvc;
-using System.Linq;
-using System.Web;
 using api_data_bd.Utiles.Validation;
 
 namespace api_data_bd.Models
@@ -28,7 +25,7 @@ namespace api_data_bd.Models
         [DataType(DataType.EmailAddress)]
         [StringLength(100)]
         [Index(IsUnique = true)]
-        [Remote("IsUserExists", "Validation", ErrorMessage= "Email already in use")]  
+        //[Remote("IsUserExists", "Validation", ErrorMessage= "Email already in use")]  
         [EmailUnique]
         [Display(Name = "Admin User Email")]
         public string AdminUsersEmail { get; set; }
@@ -40,7 +37,6 @@ namespace api_data_bd.Models
 
 
     }
-
     //fluentvalidation
     public class PlaceValidator : AbstractValidator<AdminUsers>
     {

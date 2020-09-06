@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace api_data_bd.Models
         [Display(Name = "Instituition Address District")]
         public string InstituitionAddressDistrict { get; set; }
 
+        [JsonIgnore]
+        public virtual ICollection<Instituitions> Instituitions { get; set; }
 
 
     }
