@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -24,6 +25,15 @@
 
     <style>
 
+        .navbar-fixed-top.scrolled {
+            /* background-color: rgba(0, 123, 255,0.5) !important;*/
+            background-color: rgba(52, 58, 64,0.7) !important;
+            transition: background-color 200ms linear;
+        }
+
+            .navbar-fixed-top.scrolled .nav-link {
+                color: #555;
+            }
         .dnow-regionsContent {
             background-color: SlateGray;
             position: relative;
@@ -54,8 +64,8 @@
         }
 
         .font-title {
-            font-weight: 800;
-            font-size: 5.5vh;
+            font-weight: 900;
+            font-size: 6.5vh;
         }
 @*
         .font-title {
@@ -70,24 +80,28 @@
 <body class="m-0 p-0">
     <header>
 
+        <div class="container">
+            <nav id="our_nav_bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent navbar-fixed-top py-3">
+                <div class="container">
+                    <a class="navbar-brand text-white" href="@Url.Action("Index","Home")">
+                        <h3>API Warhouse</h3>
+                    </a>
+                    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="@Url.Action("Index","Home")">API Warhouse</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
+                            <a class="nav-link text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
 
-                    <a class="nav-link text-secondary" href="@Url.Action("Contact","Home")">Contact Us</a>
-
-                </form>
-            </div>
-        </nav>
-
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
     </header>
 
@@ -96,10 +110,9 @@
     <section data-aos="fade-in">
         <div class="row text-center p-0 m-0">
             <div class="col-md-12 m-0 p-0">
+
                 <div class="dnow-regionsContent">
-
                     <div class="card bg-dark text-white">
-
                         <div id="carouselExampleSlidesOnly" class="carousel slide"  data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -114,87 +127,17 @@
                             </div>
                         </div>
 
-
                        @* <img src="~/image/backgroundImage4.png" height="500px">*@
                         <div class="overlay-div"></div>
                         <div class="card-img-overlay d-flex justify-content-center align-items-center container">
                             <div class="row">
                                 <div class=" col-sm-12 text-content">
                                     <h2 class="card-title ">
-                                        <style>
-                                            .ml11 {
-                                                font-weight: 700;
-                                                font-size: 2.5em;
-                                            }
-
-                                                .ml11 .text-wrapper {
-                                                    position: relative;
-                                                    display: inline-block;
-                                                    padding-top: 0.1em;
-                                                    padding-right: 0.05em;
-                                                    padding-bottom: 0.15em;
-                                                }
-
-                                                .ml11 .line {
-                                                    opacity: 0;
-                                                    position: absolute;
-                                                    left: 0;
-                                                    height: 100%;
-                                                    width: 3px;
-                                                    background-color: #fff;
-                                                    transform-origin: 0 50%;
-                                                }
-
-                                                .ml11 .line1 {
-                                                    top: 0;
-                                                    left: 0;
-                                                }
-
-                                                .ml11 .letter {
-                                                    display: inline-block;
-                                                    line-height: 1em;
-                                                }
-                                        </style>
                                         <h1 class="ml11">
-                                            <span class="text-wrapper">
-                                                <span class="line line1"></span>
+                                            <span class="text-wrapper font-title">
                                                 <span class="letters">BD EDUCATIONAL INSTITUTE WAREHOUSE</span>
                                             </span>
                                         </h1>
-                                        <script>
-                                            // Wrap every letter in a span
-                                            var textWrapper = document.querySelector('.ml11 .letters');
-                                            textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-
-                                            anime.timeline({ loop: true })
-                                                .add({
-                                                    targets: '.ml11 .line',
-                                                    scaleY: [0, 1],
-                                                    opacity: [0.5, 1],
-                                                    easing: "easeOutExpo",
-                                                    duration: 700
-                                                })
-                                                .add({
-                                                    targets: '.ml11 .line',
-                                                    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
-                                                    easing: "easeOutExpo",
-                                                    duration: 700,
-                                                    delay: 100
-                                                }).add({
-                                                    targets: '.ml11 .letter',
-                                                    opacity: [0, 1],
-                                                    easing: "easeOutExpo",
-                                                    duration: 600,
-                                                    offset: '-=775',
-                                                    delay: (el, i) => 34 * (i + 1)
-                                                }).add({
-                                                    targets: '.ml11',
-                                                    opacity: 0,
-                                                    duration: 1000,
-                                                    easing: "easeOutExpo",
-                                                    delay: 1000
-                                                });
-                                        </script>
                                         @*<h2 class="text-white font-title my-2">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>*@
                                         <p class="lead text-white my-3 font-weight-normal">This is an API for Educational Institution of Bangladesh.</p>
                                     </h2>
@@ -206,14 +149,95 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section>
+        <div class="container">
+            <div class="row body-100vh" >
+                <div class="col-md-12 my-auto">
+                    <div class="row">
+                        <div class="col-md-12 text-center mb-5 mt-5">
+                            <h1> WHAT'S WE PROVIDE </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+
+                                <div class="dnow-regionsContent">
+                                    <div class="card bg-dark text-white">
+                                        <img src="~/image/backgroundImage4.png" height="159px">
+                                        <div class="overlay-div"></div>
+                                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                                            <div class="row">
+                                                sadasd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <div class="dnow-regionsContent">
+                                    <div class="card">
+                                        <img src="~/image/backgroundImage4.png"  height="159px">
+                                        <div class="overlay-div"></div>
+                                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                                            <div class="row">
+                                                sadasd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <div class="dnow-regionsContent">
+                                    <div class="card text-white">
+                                        <img src="~/image/backgroundImage4.png"  height="159px">
+                                        <div class="overlay-div"></div>
+                                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                                            <div class="row">
+                                                sadasd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <div class="dnow-regionsContent">
+                                    <div class="card bg-dark text-white">
+                                        <img src="~/image/backgroundImage4.png"  height="159px">
+                                        <div class="overlay-div"></div>
+                                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                                            <div class="row">
+                                                sadasd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
 
 
 
+
+                    </div>
+                </div>
+        </div>
     </section>
 
     @* <div class="row text-center body-100vh">
@@ -413,6 +437,16 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar-fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
     </script>
 </body>
 </html>
