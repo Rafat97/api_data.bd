@@ -32,9 +32,12 @@
         .swal2-container.in {
             background-color: rgba(43, 165, 137, 0.45)
         }
+        .modal-content {
+            background-color: var(--dark);
+        }
     </style>
     <div class="container my-5 text-center ">
-        <h1 style="line-height: 1em;  font-weight: 900">All Instituitions Informations</h1>
+        <h1 style="line-height: 1em;  font-weight: 900">All Instituitions Address Informations</h1>
     </div>
     <div class="container-fluid my-5 " data-aos="fade-in">
         <div class="container bg-dark pt-1 pb-4 shadow rounded">
@@ -45,7 +48,7 @@
                     </button>
                 </a>
             </div>
-            <table id="instituiteAddress" class="display table table-striped table-condensed table-hover" style="width:100%">
+            <table id="instituiteAddress" class="display table table-striped table-condensed table-hover  dt-responsive nowrap" style="width:100%">
                 <thead class="thead-dark">
                     <tr>
                         <th></th>
@@ -86,7 +89,7 @@
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Action button
+                                    Actions
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @Html.ActionLink("Edit", "Edit", new { id = item.InstituitionAddressId }, new { @class = "dropdown-item text-black" })
@@ -119,8 +122,7 @@
                                                         Swal.showLoading()
                                                     },
                                                 })
-                                                const url = "@Url.Action("Delete", "ViewInstituitionsAddresses", new { id = item.InstituitionAddressId })"
-
+                                                const url = "@Url.Action("Delete", "ViewInstituitionsAddresses", new { id = @item.InstituitionAddressId })"
                                                 var form = $('#__AjaxAntiForgeryForm');
                                                 var token = $('input[name="__RequestVerificationToken"]', form).val();
                                                 var fd = new FormData();
@@ -139,6 +141,8 @@
                                                             title: error.message,
                                                             icon: 'error',
                                                         })
+                                                        window.location.href = url
+                                                        console.log(error.response.data)
                                                     });
 
                                                 console.log("then @item.InstituitionAddressId")
@@ -166,8 +170,24 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#instituiteAddress').DataTable({
-                responsive: true
+
+            var table = $('#instituiteAddress').DataTable({
+
+                responsive: {
+                    details: {
+                        display: $.fn.dataTable.Responsive.display.modal({
+                            header: function (row) {
+                                $(row).addClass("label-warning");
+                                var data = row.data();
+                                return 'Details for ' + data[1] + ' ' + data[2];
+
+                            },
+                        }),
+                        renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+                            tableClass: 'table'
+                        })
+                    }
+                }
             });
 
         });

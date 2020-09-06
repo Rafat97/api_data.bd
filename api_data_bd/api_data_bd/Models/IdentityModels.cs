@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -47,7 +48,12 @@ namespace api_data_bd.Models
             modelBuilder.Entity<IdentityUserLogin>().ToTable("OAUTH_UserLogins");
             modelBuilder.Entity<IdentityUserRole>().ToTable("OAUTH_UserRoles");
 
+            // modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            // modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
         }
+
+
 
         public System.Data.Entity.DbSet<api_data_bd.Models.Students> Students { get; set; }
 

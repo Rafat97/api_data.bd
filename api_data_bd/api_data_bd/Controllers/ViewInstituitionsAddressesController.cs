@@ -11,6 +11,7 @@ using api_data_bd.Models;
 using api_data_bd.Utiles.Action;
 using api_data_bd.Utiles.Static;
 using System.Web.Http.Description;
+using Microsoft.Ajax.Utilities;
 
 namespace api_data_bd.Controllers
 {
@@ -138,6 +139,8 @@ namespace api_data_bd.Controllers
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             InstituitionsAddress instituitionsAddress = await db.InstituitionsAddresses.FindAsync(id);
+            instituitionsAddress.Instituitions.ForEach(data => { data.InstituitionAddress = null; });
+            
             db.InstituitionsAddresses.Remove(instituitionsAddress);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
