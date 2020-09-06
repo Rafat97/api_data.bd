@@ -6,56 +6,54 @@
     background-size: cover;
 }*/
 
-body::after {
-    content: "";
-   /* background: url("/image/backgroundImage.jpeg");*/
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
+/**, *::before, *::after {
+    box-sizing: inherit;
+}*/
+
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 10px;
+
+/*.Cover {
+   
+    display: flex;
+    position: relative;
+    
+}
+
+    .Cover::after {
+        content: "";
+        background: url('/image/backgroundImage4.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }*/
+
+.body-100vh {
+    height: 70vh;
 }
 
 
-.h2-content {
-    font-size: 40px;
-    color: white;
+
+   
+
+/*.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    transition: .5s ease;
+    background-color: black;
 }
+*/
 
-.h3-content {
-    text-align: center;
-}
-
-.Cover {
-    background: url('/image/backgroundImage4.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 600px;
-}
-
-
-
-    .HOVER{
-
-    }
-
-        .HOVER:hover {
-            transform: scale(1.1);
-        }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}

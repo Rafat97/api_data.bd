@@ -8,223 +8,411 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/Content/fontawesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="~/Content/Site.css">
 
     <title>HOME</title>
+
+
+
+    <style>
+
+        .dnow-regionsContent {
+            background-color: SlateGray;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+            .dnow-regionsContent .card-img-overlay img {
+                max-height: 40rem;
+            }
+
+        .overlay-div {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: #000;
+            opacity: 0.7;
+        }
+
+
+        .rounded-btn {
+            border-radius: 4rem;
+        }
+
+        .text-white-50 {
+            color: rgba(255, 255, 255,0.8) !important;
+        }
+
+        .font-title {
+            font-weight: 800;
+            font-size: 5.5vh;
+        }
+@*
+        .font-title {
+            font-weight: 900;
+            font-size: 7.5vh;
+        }*@
+    </style>
+
+
 </head>
 
-<body>
-
+<body class="m-0 p-0">
     <header>
 
-       
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">API Warhouse</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">API Warhouse</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <a class="nav-link text-secondary" href="@Url.Action("Contact","Home")">Contact Us</a>
-                        
-                    </form>
-                </div>
-            </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
 
-      
+                    <a class="nav-link text-secondary" href="@Url.Action("Contact","Home")">Contact Us</a>
+
+                </form>
+            </div>
+        </nav>
+
+
     </header>
 
 
-    <div class="container-fluid m-0 p-0">
 
-        <div class="row Cover p-5 text-center">
+    <section data-aos="fade-in">
+        <div class="row text-center p-0 m-0">
+            <div class="col-md-12 m-0 p-0">
+                <div class="dnow-regionsContent">
 
-            <div class="col-md-12 mt-5">
+                    <div class="card bg-dark text-white">
 
-                <h2 class="text-white mt-5">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
-                <p class="lead text-white mb-5">This is an API for Educational Institution of Bangladesh.</p>
+                        <div id="carouselExampleSlidesOnly" class="carousel slide"  data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/image/backgroundImage4.png"  height="500px" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/image/backgroundImage3.png"  height="500px" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/image/backgroundImage2.jpg"  height="500px" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+
+
+                       @* <img src="~/image/backgroundImage4.png" height="500px">*@
+                        <div class="overlay-div"></div>
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                            <div class="row">
+                                <div class=" col-sm-12 text-content">
+                                    <h2 class="card-title ">
+                                        <style>
+                                            .ml11 {
+                                                font-weight: 700;
+                                                font-size: 2.5em;
+                                            }
+
+                                                .ml11 .text-wrapper {
+                                                    position: relative;
+                                                    display: inline-block;
+                                                    padding-top: 0.1em;
+                                                    padding-right: 0.05em;
+                                                    padding-bottom: 0.15em;
+                                                }
+
+                                                .ml11 .line {
+                                                    opacity: 0;
+                                                    position: absolute;
+                                                    left: 0;
+                                                    height: 100%;
+                                                    width: 3px;
+                                                    background-color: #fff;
+                                                    transform-origin: 0 50%;
+                                                }
+
+                                                .ml11 .line1 {
+                                                    top: 0;
+                                                    left: 0;
+                                                }
+
+                                                .ml11 .letter {
+                                                    display: inline-block;
+                                                    line-height: 1em;
+                                                }
+                                        </style>
+                                        <h1 class="ml11">
+                                            <span class="text-wrapper">
+                                                <span class="line line1"></span>
+                                                <span class="letters">BD EDUCATIONAL INSTITUTE WAREHOUSE</span>
+                                            </span>
+                                        </h1>
+                                        <script>
+                                            // Wrap every letter in a span
+                                            var textWrapper = document.querySelector('.ml11 .letters');
+                                            textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+                                            anime.timeline({ loop: true })
+                                                .add({
+                                                    targets: '.ml11 .line',
+                                                    scaleY: [0, 1],
+                                                    opacity: [0.5, 1],
+                                                    easing: "easeOutExpo",
+                                                    duration: 700
+                                                })
+                                                .add({
+                                                    targets: '.ml11 .line',
+                                                    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                                                    easing: "easeOutExpo",
+                                                    duration: 700,
+                                                    delay: 100
+                                                }).add({
+                                                    targets: '.ml11 .letter',
+                                                    opacity: [0, 1],
+                                                    easing: "easeOutExpo",
+                                                    duration: 600,
+                                                    offset: '-=775',
+                                                    delay: (el, i) => 34 * (i + 1)
+                                                }).add({
+                                                    targets: '.ml11',
+                                                    opacity: 0,
+                                                    duration: 1000,
+                                                    easing: "easeOutExpo",
+                                                    delay: 1000
+                                                });
+                                        </script>
+                                        @*<h2 class="text-white font-title my-2">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>*@
+                                        <p class="lead text-white my-3 font-weight-normal">This is an API for Educational Institution of Bangladesh.</p>
+                                    </h2>
+                                    <a href="@Url.Action("Index","Help")">
+                                        <button class="btn btn-outline-primary btn-lg rounded-btn py-2 px-4 text-white-50 my-2">Explore The API</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+
+
+    </section>
+
+    @* <div class="row text-center body-100vh">
+            <div class="col-md-12 my-auto">
+
+                <div class="container_om">
+                    <img src="~/image/backgroundImage3.png" alt="Avatar" class="image">
+                    <div class="overlay">
+
+                    </div>
+
+                    <div class="text">
+                        <h2 class="text-white ">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
+                        <p class="lead text-white ">This is an API for Educational Institution of Bangladesh.</p>
+
+                        <span>@Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>*@
+
+    @* <div class="row Cover text-center body-100vh overlay">
+
+            <div class="col-md-12 my-auto ">
+
+                <h2 class="text-white ">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
+                <p class="lead text-white ">This is an API for Educational Institution of Bangladesh.</p>
 
                 <span>@Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })</span>
 
             </div>
 
-        </div>
+        </div>*@
 
-           <div class="row" style="background-color:#0b1e2f">
+    <!--<!--<div class="row" style="background-color:#0b1e2f">
 
-               <div class="col-md-12  mt-5 ">
-                  
-                       <div class="container">
+        <div class="col-md-12  mt-5 ">
 
-                           <div class="row">
-                               <div class="col-md-12">
+            <div class="container">
 
-                                   <h2 class="text-center text-white mb-5">The Data That You Can Get From This API </h2>
+                <div class="row">
+                    <div class="col-md-12">
 
-                               </div>
-                           </div>
+                        <h2 class="text-center text-white mb-5">The Data That You Can Get From This API </h2>
 
-                           <div class="row">
+                    </div>
+                </div>
 
-                               <div class="col-md-3 mb-5">
+                <div class="row">
 
-                                   <div class="card text-center bg-secondary h-100">
+                    <div class="col-md-3 mb-5">
 
-                                       <img class="card-img h-100" src="~/image/instituteImage.jpg" alt="">
+                        <div class="card text-center bg-secondary h-100">
 
-                                       <div class="card-img-overlay">
-                                         @*  <div class="card-img-top pt-4">
-                                               <i class="fas fa-school fa-3x" style="color:white;"></i>
-                                           </div>*@
+                            <img class="card-img h-100" src="~/image/instituteImage.jpg" alt="">
 
-                                           <div class="card-body">
+                            <div class="card-img-overlay">-->
+    <!--@*  <div class="card-img-top pt-4">
+            <i class="fas fa-school fa-3x" style="color:white;"></i>
+        </div>*@-->
+    <!--<div class="card-body">
 
-                                               <h2 class="card-title text-white mt-4">Instituitions</h2>
+                    <h2 class="card-title text-white mt-4">Instituitions</h2>
 
-                                           </div>
-                                       </div>
-
-                                   </div>
-
-                               </div>
-
-
-                               <div class="col-md-3 mb-5">
-                                   <div class="card text-center bg-secondary h-100">
-
-                                       <img class="card-img h-100" src="~/image/instituteAddressImage2.jpg" alt="">
-
-                                       <div class="card-img-overlay">
-                                           @*<div class="card-img-top pt-4">
-                                               <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
-                                           </div>*@
-
-                                           <div class="card-body">
-
-                                               <h2 class="card-title text-white">Instituite Addresses</h2>
-
-
-                                           </div>
-                                       </div>
-
-                                   </div>
-                               </div>
-
-                               <div class="col-md-3 mb-5">
-                                   <div class="card text-center bg-secondary h-100">
-
-                                       <img class="card-img h-100" src="~/image/statisticsImage.jpg" alt="">
-
-                                      @* <div class="card-img-top pt-4">
-                                           <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
-                                       </div>*@
-
-                                       <div class="card-img-overlay">
-                                           <div class="card-body">
-
-                                           <h2 class="card-title text-white">Institute Statistics</h2>
-
-                                           </div>
-                                       </div>
-
-                                   </div>
-                               </div>
-
-                               <div class="col-md-3 mb-5">
-                                   <div class="card text-center bg-secondary h-100">
-
-                                        <img class="card-img h-100" src="~/image/boardExamImage.jpg" alt="">
-
-                                      @* <div class="card-img-top pt-4">
-                                           <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
-                                       </div>*@
-
-                                       <div class="card-img-overlay">
-                                           <div class="card-body">
-
-                                           <h2 class="card-title text-white">Board Results</h2>
-
-                                           </div>
-
-                                       </div>
-
-                                   </div>
-                               </div>
-
-
-                           </div>
-
-                       </div>
-
-                   <div class="container mt-5">
-
-                       <div class="row">
-
-                           <div class="col-md-12">
-
-                               <h2 class="text-center text-white mb-4 mt-5">How To Use?</h2>
-                               <p class="text-white" style="font-size:larger;">Copy the correct URL and use it in your Application. You can also simply view the data in json format
-                                by using the URL in the search bar of the browser.
-                               </p>
-                               <p class="text-white mb-5" style="font-size:larger;">
-                                   For Example, The URL For getting Institution data is '/api/Instituitions'.<br />
-                                   You can get other URL from Explore section.
-                               </p>
-
-                           </div>
-
-                       </div>
-
-                   </div>
-
-
-               </div>
-
-           </div>
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <footer style=" background: url('/image/FooterImage5.jpg');  background-repeat: no-repeat;  background-attachment: fixed; background-size: cover;">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-md-6">
-                                    <h3 class="mt-5 text-white">
-                                        About Us
-                                    </h3>
-                                    <p class="text-white">
-                                        Drubojit Saha<br />
-                                        Emdadul Haque<br />
-                                        Mohammad Rakib - Uz - Zaman
-                                    </p>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="my-5">
-                                        <a class="text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </footer>
                 </div>
             </div>
 
         </div>
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </div>
+
+
+    <div class="col-md-3 mb-5">
+        <div class="card text-center bg-secondary h-100">
+
+            <img class="card-img h-100" src="~/image/instituteAddressImage2.jpg" alt="">
+
+            <div class="card-img-overlay">-->
+    <!--@*<div class="card-img-top pt-4">
+            <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
+        </div>*@-->
+    <!--<!--<div class="card-body">
+
+                    <h2 class="card-title text-white">Instituite Addresses</h2>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-5">
+        <div class="card text-center bg-secondary h-100">
+
+            <img class="card-img h-100" src="~/image/statisticsImage.jpg" alt="">-->
+    <!--@* <div class="card-img-top pt-4">
+            <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
+        </div>*@-->
+    <!--<!--<div class="card-img-overlay">
+                <div class="card-body">
+
+                    <h2 class="card-title text-white">Institute Statistics</h2>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-5">
+        <div class="card text-center bg-secondary h-100">
+
+            <img class="card-img h-100" src="~/image/boardExamImage.jpg" alt="">-->
+    <!--@* <div class="card-img-top pt-4">
+            <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
+        </div>*@-->
+    <!--<!--<div class="card-img-overlay">
+                                <div class="card-body">
+
+                                    <h2 class="card-title text-white">Board Results</h2>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="container mt-5">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h2 class="text-center text-white mb-4 mt-5">How To Use?</h2>
+                        <p class="text-white" style="font-size:larger;">
+                            Copy the correct URL and use it in your Application. You can also simply view the data in json format
+                            by using the URL in the search bar of the browser.
+                        </p>
+                        <p class="text-white mb-5" style="font-size:larger;">
+                            For Example, The URL For getting Institution data is '/api/Instituitions'.<br />
+                            You can get other URL from Explore section.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>-->
+    <!--@*  <div class="row">
+            <div class="col-md-12">
+                <footer style=" background: url('/image/FooterImage5.jpg');  background-repeat: no-repeat;  background-attachment: fixed; background-size: cover;">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h3 class="mt-5 text-white">
+                                    About Us
+                                </h3>
+                                <p class="text-white">
+                                    Drubojit Saha<br />
+                                    Emdadul Haque<br />
+                                    Mohammad Rakib - Uz - Zaman
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="my-5">
+                                    <a class="text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>*@
+
+    </div>-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
