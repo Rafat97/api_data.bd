@@ -35,6 +35,14 @@
         z-index: -1;
     }*/
 
+* {
+    box-sizing: border-box;
+}
+:root {
+    --gutter: 8rem;
+    --black: #000;
+    --white: #fff;
+}
 body {
     margin: 0;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -49,11 +57,44 @@ body {
 
 
 .body-100vh {
+    height: 100vh;
+}
+.body-90vh {
+    height: 90vh;
+}
+.body-80vh {
+    height: 80vh;
+}
+.body-70vh {
     height: 70vh;
 }
 
+.hero__scroll {
+    position: absolute;
+    bottom: calc(var(--gutter) * .5);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
 
+@keyframes pulse {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
 
+    50% {
+        -webkit-transform: translate(0, 10px);
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
    
 
 /*.overlay {
@@ -70,3 +111,26 @@ body {
 }
 */
 
+.overley-card-parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    border:0px;
+}
+
+.overley-card {
+    opacity: .6;
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+}
+
+.overley-card-parent:hover  {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

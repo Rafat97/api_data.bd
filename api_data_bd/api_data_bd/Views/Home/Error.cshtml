@@ -21,6 +21,9 @@
 </head>
 
 <style>
+    body{
+       background:black;
+    }
     .body-100vh{
         height : 100vh;
     }
@@ -48,15 +51,15 @@
 
 <body>
 
-    <div class="container-fluid d-flex body-100vh " style="background: aliceblue;">
+    <div class="container-fluid d-flex body-100vh ">
         <div class="container justify-content-center align-self-center text-center">
             <div>
                 <h1 class="ml9">
                     <span class="text-wrapper">
-                        <span class="letters">404</span>
+                        <span class="letters text-white-50">404</span>
                     </span>
                 </h1>
-                <h2 class="m-0 p-0">The page you requested could not found</h2>
+                <h2 class="m-0 p-0 text-white-50">The page you requested could not found</h2>
                 <div class="my-5">
                     <a href="@Url.Action("Index","Home")">
                         <button style="border-radius:1.25rem;" class="btn btn-outline-primary px-3 py-2 font-weight-bold"> Home Page </button>
