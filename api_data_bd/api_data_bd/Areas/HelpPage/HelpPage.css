@@ -1,4 +1,4 @@
-.help-page h1,
+/*.help-page h1,
 .help-page .h1,
 .help-page h2,
 .help-page .h2,
@@ -131,4 +131,35 @@
 .help-page a {
     color: #0000EE;
     text-decoration: none;
+}*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #858796;
+    background-color: #181924;
+}
+.body-100vh {
+    height: 100vh;
+}
+.body-90vh {
+    height: 90vh;
+}
+.body-80vh {
+    height: 80vh;
+}
+.body-70vh {
+    height: 70vh;
+}
+.body-60vh {
+    height: 60vh;
+}
+.body-50vh {
+    height: 50vh;
 }

@@ -13,26 +13,59 @@
 }
 
 <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+
+<style>
+    .font-title {
+        font-weight: 900;
+        font-size: 6.5vh;
+    }
+</style>
 <header class="help-page">
-    <div class="content-wrapper">
-        <div class="float-left">
-            <h1>@ViewBag.Title</h1>
+    <div class="container">
+        <div class="text-center py-4 ">
+            <h1 class="font-title">@ViewBag.Title</h1>
         </div>
     </div>
 </header>
-<div id="body" class="help-page">
-    <section class="featured">
-        <div class="content-wrapper">
-            <h2>Introduction</h2>
-            <p>
-                Provide a general description of your APIs here.
-            </p>
+
+
+
+<section class="mb-5">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="d-block ">
+                <div class="text-center">
+                    <h3>Introduction</h3>
+                </div>
+                <div class="text-center">
+                    Here is the all documentation of web api . You can use this api for free.
+                </div>
+            </div>
+
         </div>
-    </section>
-    <section class="content-wrapper main-content clear-fix">
+    </div>
+</section>
+
+
+<section class="content-wrapper main-content clear-fix">
+    <div class="container">
+        @foreach (var group in apiGroups)
+        {
+
+            @group.Key.ControllerName
+            <br />
+        }
+
+    </div>
+</section>
+
+<section class="content-wrapper main-content clear-fix">
+    <div class="container">
         @foreach (var group in apiGroups)
         {
             @Html.DisplayFor(m => group, "ApiGroup")
         }
-    </section>
-</div>
+
+    </div>
+</section>
+
