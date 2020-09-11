@@ -7,16 +7,32 @@
 @{
     ApiDescription description = Model.ApiDescription;
 }
-<h1>@description.HttpMethod.Method @description.RelativePath</h1>
-<div>
+<style>
+    .font-title {
+        font-weight: 900;
+        font-size: 6.5vh;
+    }
+</style>
+<h1 class="text-white text-center mb-5  font-title">
+    Basic Info
+</h1>
+<h3 class="text-white mt-5">Http Method </h3>
+@description.HttpMethod.Method
+
+<h3 class="text-white mt-5">URI </h3>
+@description.RelativePath
+
+
+<div class="mt-5">
     <p>@description.Documentation</p>
 
-    <h2>Request Information</h2>
+    <h1 class="text-white  text-center mb-5 font-title">Request Information</h1>
 
-    <h3>URI Parameters</h3>
+    <h3 class="text-white">URI Parameters</h3>
+
     @Html.DisplayFor(m => m.UriParameters, "Parameters")
 
-    <h3>Body Parameters</h3>
+    <h3 class="text-white">Body Parameters</h3>
 
     <p>@Model.RequestDocumentation</p>
 
@@ -35,13 +51,13 @@
 
     @if (Model.SampleRequests.Count > 0)
     {
-        <h3>Request Formats</h3>
+        <h1 class="text-white  text-center mb-5  font-title">Request Formats</h1>
         @Html.DisplayFor(m => m.SampleRequests, "Samples")
     }
 
-    <h2>Response Information</h2>
+    <h1 class="text-white  text-center my-5  font-title">Response Information</h1>
 
-    <h3>Resource Description</h3>
+    <h3 class="text-white">Resource Description</h3>
 
     <p>@description.ResponseDescription.Documentation</p>
 
@@ -60,8 +76,10 @@
 
     @if (Model.SampleResponses.Count > 0)
     {
-        <h3>Response Formats</h3>
+        <h3 class="text-white mt-5">Response Formats</h3>
         @Html.DisplayFor(m => m.SampleResponses, "Samples")
     }
-
+    <h1 class="text-white text-center my-5  font-title">
+        --Thank you--
+    </h1>
 </div>

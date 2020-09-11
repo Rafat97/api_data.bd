@@ -48,22 +48,48 @@
 
 
 <section class="content-wrapper main-content clear-fix">
-    <div class="container">
-        @foreach (var group in apiGroups)
-        {
-
-            @group.Key.ControllerName
-            <br />
-        }
+    <div class="container"  id="fixToTop">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark " style="opacity:0.6">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars text-white"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    @foreach (var group in apiGroups)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#@group.Key.ControllerName">@group.Key.ControllerName</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
 
     </div>
+    <script>
+        var fixmeTop = $('#fixToTop').offset().top;
+        $(window).scroll(function () {
+            var currentScroll = $(window).scrollTop();
+            console.log(currentScroll);
+            if (currentScroll >= fixmeTop) {
+                $('#fixToTop').addClass("fixed-top")
+            } else {
+                $('#fixToTop').removeClass("fixed-top")
+            }
+        });
+    </script>
 </section>
 
 <section class="content-wrapper main-content clear-fix">
     <div class="container">
         @foreach (var group in apiGroups)
         {
-            @Html.DisplayFor(m => group, "ApiGroup")
+        <section id="@group.Key.ControllerName">
+            <div class="container-fluid p-0 m-0">
+                @Html.DisplayFor(m => group, "ApiGroup")
+            </div>
+        </section>
         }
 
     </div>

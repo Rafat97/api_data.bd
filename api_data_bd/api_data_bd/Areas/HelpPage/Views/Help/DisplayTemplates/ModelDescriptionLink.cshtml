@@ -1,4 +1,8 @@
 @using api_data_bd.Areas.HelpPage.ModelDescriptions
+
+
+
+
 @model Type
 @{
     ModelDescription modelDescription = ViewBag.modelDescription;
@@ -7,6 +11,7 @@
         if (Model == typeof(Object))
         {
             @:Object
+
         }
         else
         {
