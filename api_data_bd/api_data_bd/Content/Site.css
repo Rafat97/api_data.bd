@@ -128,9 +128,10 @@ body {
 
 }
 
-.overley-card-parent:hover  {
+.overley-card-parent:hover {
     background-color: rgba(0,0,0,0.5);
     position: absolute;
     height: 100%;
     width: 100%;
+    /*box-shadow: 0 10px 36px 0 rgba(54,68,75,.18);*/
 }
