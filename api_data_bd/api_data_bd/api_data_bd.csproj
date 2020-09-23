@@ -1965,6 +1965,7 @@
     <Content Include="image\backgroundImage3.png" />
     <Content Include="image\backgroundImage4.png" />
     <Content Include="image\boardExamImage.jpg" />
+    <Content Include="image\drubojit.jpg" />
     <Content Include="image\FooterImage.jpg" />
     <Content Include="image\FooterImage2.jpg" />
     <Content Include="image\FooterImage3.jpg" />
@@ -1973,6 +1974,8 @@
     <Content Include="image\instituteAddressImage.jpg" />
     <Content Include="image\instituteAddressImage2.jpg" />
     <Content Include="image\instituteImage.jpg" />
+    <Content Include="image\rafat.jpg" />
+    <Content Include="image\rakib.jpg" />
     <Content Include="image\statisticsImage.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
