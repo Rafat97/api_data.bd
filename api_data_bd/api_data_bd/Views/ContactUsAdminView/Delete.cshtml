@@ -1,0 +1,57 @@
+﻿@model api_data_bd.Models.ContactUs
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_DefaultAppLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ContactUs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsMessage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

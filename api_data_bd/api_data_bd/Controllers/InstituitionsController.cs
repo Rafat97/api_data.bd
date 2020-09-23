@@ -17,12 +17,21 @@ namespace api_data_bd.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
         // GET: api/Instituitions
+        /// <summary>
+        /// This api Url to get all Instituitions Information
+        /// </summary>
         public IQueryable<Instituitions> GetInstituitions()
         {
             return db.Instituitions;
         }
 
+        // GET: api/Instituitions
+        /// <summary>
+        /// This api Url to get an Instituitions Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         // GET: api/Instituitions/5
         [ResponseType(typeof(Instituitions))]
         public async Task<IHttpActionResult> GetInstituitions(int id)

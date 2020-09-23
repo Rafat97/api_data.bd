@@ -1,4 +1,4 @@
-﻿
+﻿@model api_data_bd.Models.ContactUs
 @{
     ViewBag.Title = "Contact";
     Layout = null;
@@ -9,12 +9,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Contact Form with Yellow Background</title>
+    <title>Contact Us</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Courgette|Pacifico:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -22,7 +22,7 @@
 
     body {
         color: #000;
-        background-color: #fcda2e !important;
+        background-color: #000 !important;
         font-family: "Roboto", sans-serif;
     }
 
@@ -56,7 +56,7 @@
                 box-shadow: 0 0 8px #dcae10;
             }
 
-        .contact-form .btn-primary {
+        .contact-form {
             min-width: 250px;
             color: #fcda2e;
             background: #000;
@@ -64,7 +64,7 @@
             border: none;
         }
 
-            .contact-form .btn-primary:hover {
+            .contact-form  {
                 color: #fff;
             }
 
@@ -92,32 +92,37 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 m-auto">
                 <div class="contact-form">
-                    <h1>Get in Touch</h1>
-                    <form action="/examples/actions/confirmation.php" method="post">
+                    <h1 class="text-white">Contact Us</h1>
+                    <form action="@Url.Action("Contact","Home")" method="post">
+                        @Html.AntiForgeryToken()
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputName">Name</label>
-                                    <input type="text" class="form-control" id="inputName" required>
+                                <div class="form-group text-white-50">
+                                    <label  for="inputName">Name</label>
+                                    <input type="text" name="ContactUsName" class="form-control" id="inputName" required>
+                                    @Html.ValidationMessageFor(model => model.ContactUsName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group">
+                                <div class="form-group text-white-50">
                                     <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail" required>
+                                    <input type="email" name="ContactUsEmail" class="form-control" id="inputEmail" required>
+                                    @Html.ValidationMessageFor(model => model.ContactUsEmail, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group text-white-50">
                             <label for="inputSubject">Subject</label>
-                            <input type="text" class="form-control" id="inputSubject" required>
+                            <input type="text" name="ContactUsSubject" class="form-control" id="inputSubject" required>
+                            @Html.ValidationMessageFor(model => model.ContactUsSubject, "", new { @class = "text-danger" })
                         </div>
-                        <div class="form-group">
+                        <div class="form-group text-white-50">
                             <label for="inputMessage">Message</label>
-                            <textarea class="form-control" id="inputMessage" rows="5" required></textarea>
+                            <textarea name="ContactUsMessage" class="form-control" id="inputMessage" rows="5" required min="10"></textarea>
+                            @Html.ValidationMessageFor(model => model.ContactUsMessage, "", new { @class = "text-danger" })
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                        <div class="text-center ">
+                            <button type="submit" class="btn btn-primary px-5"><i class="fa fa-paper-plane"></i> Send</button>
                         </div>
                     </form>
                 </div>

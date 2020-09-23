@@ -1,0 +1,51 @@
+﻿@model api_data_bd.Models.ContactUs
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DefaultAppLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContactUs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUsMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUsMessage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContactUsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
