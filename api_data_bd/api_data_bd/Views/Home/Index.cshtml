@@ -25,6 +25,10 @@
 
     <style>
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .navbar-fixed-top.scrolled {
             /* background-color: rgba(0, 123, 255,0.5) !important;*/
             background-color: rgba(52, 58, 64,0.7) !important;
@@ -67,6 +71,9 @@
             font-weight: 900;
             font-size: 6.5vh;
         }
+
+       
+
     </style>
 
 
@@ -124,7 +131,13 @@
 
                         @* <img src="~/image/backgroundImage4.png" height="500px">*@
                         <div class="overlay-div"></div>
-                        <div class="card-img-overlay d-flex justify-content-center align-items-center container">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center container"
+                             data-aos="zoom-in"
+                             data-aos-offset="100"
+                             data-aos-delay="50"
+                             data-aos-duration="500"
+                             data-aos-easing="ease-in-out"
+                             data-aos-anchor-placement="top-center">
                             <div class="row">
                                 <div class=" col-sm-12 text-content">
                                     <h2 class="card-title ">
@@ -146,16 +159,26 @@
                 </div>
                 <div class="hero__scroll  js-scrolldown d-none d-md-block">
                     <div>
-                        <i class="fas fa-chevron-down fa-3x"></i><br />
-                        <i class="fas fa-chevron-down fa-3x"></i>
+                        <a href="#section-2">
+                            <i class="fas fa-chevron-down fa-3x"></i><br />
+                            <i class="fas fa-chevron-down fa-3x"></i>
+                            </a>
                     </div>
                 </div>
             </div>
+            </div>
     </section>
 
-    <section id="section-2" class="section border-0">
-        <div class="container">
-            <div class="row body-80vh">
+    <section id="section-2" class="border-0 mt-5 py-5" >
+        <div class="container"
+              data-aos="fade-up"
+             data-aos-offset="100"
+             data-aos-delay="20"
+             data-aos-duration="500"
+             data-aos-easing="ease-in-out"
+             data-aos-anchor-placement="top-center"
+             >
+            <div class="row">
                 <div class="col-md-12 my-auto">
                     <div class="row">
                         <div class="col-md-12 text-center mb-5 mt-5">
@@ -214,107 +237,61 @@
     </section>
 
 
-    <section id="section-3" class="section border-0">
+    <section id="section-3" class="border-0 mt-5"
+             data-aos="flip-up"
+             data-aos-offset="100"
+             data-aos-delay="20"
+             data-aos-duration="500"
+             data-aos-easing="ease-in-out"
+             data-aos-anchor-placement="top-center">
         <div class="container">
-            <div class="row body-80vh">
+            <div class="row">
                 <div class="col-md-12 my-auto">
                     <div class="row">
                         <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title"> HOW IT WORKS </h1>
+                            <h1 class="font-title">  HOW IT'S WORK  </h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="height:350px;">
+                                <i class="fas fa-database text-center fa-5x mt-5"></i>
+                                <div class="card-body mt-1">
+                                    <h4 class="card-title text-center mb-3">Explore The Api</h4>
+                                    <p class="card-text text-center mt-4" style="font-size:large;">Click 'explore the API' button.Then an API documention page will open.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="height:350px;">
+                                <i class="fas fa-link text-center fa-5x mt-5"></i>
+                                <div class="card-body mt-1">
+                                    <h4 class="card-title text-center mb-3">Copy The Url</h4>
+                                    <p class="card-text text-center mt-4">
+                                        Click the sections from top bar or scroll down for finding which type of data you need.Then click the link
+                                        for your desire request and copy the URL from basic info.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="height:350px;">
+                               
+                                <div class="text-center mt-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                         width="90" height="90"
+                                         viewBox="0 0 172 172"
+                                         style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#787880"><path d="M22.93333,22.93333c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v34.4v80.26667h57.33333v-11.46667h-45.86667v-68.8h126.13333v68.8h-45.86667v11.46667h57.33333v-86v-28.66667c0,-6.33533 -5.13133,-11.46667 -11.46667,-11.46667zM28.66667,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM51.6,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM68.8,40.13333h80.26667v11.46667h-80.26667zM86,91.73333l-22.93333,22.93333h17.2v40.13333c0,3.23951 -2.49383,5.73333 -5.73333,5.73333c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843c9.43116,0 17.2,-7.76884 17.2,-17.2v-40.13333h17.2z"></path></g></g>
+                                    </svg>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <section id="section-4" class="section border-0">
-        <div class="container">
-            <div class="row body-80vh">
-                <div class="col-md-12 my-auto">
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title"> ABOUT </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/backgroundImage4.png" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        sadasd
-                                    </div>
+                                <div class="card-body mt-1">
+                                    <h4 class="card-title text-center mb-3">Use The Copied Link</h4>
+                                    <p class="card-text text-center mt-4">
+                                        Use the copied link in your browser or in your application for getting the your desired data in JSON
+                                        format.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -326,6 +303,89 @@
     </section>
 
 
+
+    <section id="section-4" class="border-0 mt-5"
+             data-aos="flip-right"
+             data-aos-offset="100"
+             data-aos-delay="20"
+             data-aos-duration="500"
+             data-aos-easing="ease-in-out"
+             data-aos-anchor-placement="top-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 my-auto">
+                    <div class="row">
+                        <div class="col-md-12 text-center mb-5 mt-5">
+                            <h1 class="font-title"> ABOUT US </h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="blue-bg d-flex justify-content-center align-items-center">
+                                <div>
+                                    <img src="~/image/rafat.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
+                                </div>
+
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                <div>
+                                    <div class="card-body mt-5 pt-4">
+                                        <h3 class="card-title text-center mt-2">Emdadul Haque</h3>
+                                        <h5 class="card-text text-center mt-3">ID: 170104028</h5>
+                                        <h5 class="card-text text-center mb-3">Contact: +880 1521-428741</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="blue-bg d-flex justify-content-center align-items-center">
+                                <div>
+                                    <img src="~/image/rakib.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
+                                </div>
+
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                <div>
+                                    <div class="card-body mt-5 pt-4">
+                                        <h3 class="card-title text-center mt-2">Mohammad Rakib</h3>
+                                        <h5 class="card-text text-center mt-3">ID: 170104041</h5>
+                                        <h5 class="card-text text-center mb-3">Contact: +880 1643-394222</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="blue-bg d-flex justify-content-center align-items-center">
+                                <div>
+                                    <img src="~/image/drubojit.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
+                                </div>
+
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                <div>
+                                    <div class="card-body mt-5 pt-4">
+                                        <h3 class="card-title text-center mt-2">Drubojit Saha</h3>
+                                        <h5 class="card-text text-center mt-3">ID: 170104027</h5>
+                                        <h5 class="card-text text-center mb-3">Contact: +880 1625-490666</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  
+
     <footer>
         <div class="container">
             <div class="row ">
@@ -336,201 +396,14 @@
                         </div>
                     </div>
                     <div class="row">
-                      <div ></div>
+                        <div></div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    @* <div class="row text-center body-100vh">
-            <div class="col-md-12 my-auto">
 
-                <div class="container_om">
-                    <img src="~/image/backgroundImage3.png" alt="Avatar" class="image">
-                    <div class="overlay">
-
-                    </div>
-
-                    <div class="text">
-                        <h2 class="text-white ">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
-                        <p class="lead text-white ">This is an API for Educational Institution of Bangladesh.</p>
-
-                        <span>@Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>*@
-
-    @* <div class="row Cover text-center body-100vh overlay">
-
-            <div class="col-md-12 my-auto ">
-
-                <h2 class="text-white ">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>
-                <p class="lead text-white ">This is an API for Educational Institution of Bangladesh.</p>
-
-                <span>@Html.ActionLink("Explore The API", "Index", "Help", new { area = "" }, new { @class = "btn btn-success btn-lg" })</span>
-
-            </div>
-
-        </div>*@
-
-    <!--<!--<div class="row" style="background-color:#0b1e2f">
-
-        <div class="col-md-12  mt-5 ">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2 class="text-center text-white mb-5">The Data That You Can Get From This API </h2>
-
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-3 mb-5">
-
-                        <div class="card text-center bg-secondary h-100">
-
-                            <img class="card-img h-100" src="~/image/instituteImage.jpg" alt="">
-
-                            <div class="card-img-overlay">-->
-    <!--@*  <div class="card-img-top pt-4">
-            <i class="fas fa-school fa-3x" style="color:white;"></i>
-        </div>*@-->
-    <!--<div class="card-body">
-
-                    <h2 class="card-title text-white mt-4">Instituitions</h2>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="col-md-3 mb-5">
-        <div class="card text-center bg-secondary h-100">
-
-            <img class="card-img h-100" src="~/image/instituteAddressImage2.jpg" alt="">
-
-            <div class="card-img-overlay">-->
-    <!--@*<div class="card-img-top pt-4">
-            <i class="fas fa-map-marked-alt fa-3x" style="color:white;"></i>
-        </div>*@-->
-    <!--<!--<div class="card-body">
-
-                    <h2 class="card-title text-white">Instituite Addresses</h2>
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="col-md-3 mb-5">
-        <div class="card text-center bg-secondary h-100">
-
-            <img class="card-img h-100" src="~/image/statisticsImage.jpg" alt="">-->
-    <!--@* <div class="card-img-top pt-4">
-            <i class="fas fa-chart-area fa-3x" style="color:white;"></i>
-        </div>*@-->
-    <!--<!--<div class="card-img-overlay">
-                <div class="card-body">
-
-                    <h2 class="card-title text-white">Institute Statistics</h2>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="col-md-3 mb-5">
-        <div class="card text-center bg-secondary h-100">
-
-            <img class="card-img h-100" src="~/image/boardExamImage.jpg" alt="">-->
-    <!--@* <div class="card-img-top pt-4">
-            <i class="fas fa-graduation-cap fa-3x" style="color:white;"></i>
-        </div>*@-->
-    <!--<!--<div class="card-img-overlay">
-                                <div class="card-body">
-
-                                    <h2 class="card-title text-white">Board Results</h2>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="container mt-5">
-
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <h2 class="text-center text-white mb-4 mt-5">How To Use?</h2>
-                        <p class="text-white" style="font-size:larger;">
-                            Copy the correct URL and use it in your Application. You can also simply view the data in json format
-                            by using the URL in the search bar of the browser.
-                        </p>
-                        <p class="text-white mb-5" style="font-size:larger;">
-                            For Example, The URL For getting Institution data is '/api/Instituitions'.<br />
-                            You can get other URL from Explore section.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>-->
-    <!--@*  <div class="row">
-            <div class="col-md-12">
-                <footer style=" background: url('/image/FooterImage5.jpg');  background-repeat: no-repeat;  background-attachment: fixed; background-size: cover;">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                <h3 class="mt-5 text-white">
-                                    About Us
-                                </h3>
-                                <p class="text-white">
-                                    Drubojit Saha<br />
-                                    Emdadul Haque<br />
-                                    Mohammad Rakib - Uz - Zaman
-                                </p>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="my-5">
-                                    <a class="text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>*@
-
-    </div>-->
+   
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -540,116 +413,17 @@
     <script>
         AOS.init();
     </script>
+
     <script>
 
-            $(function () {
-                $(document).scroll(function () {
-                    var $nav = $(".navbar-fixed-top");
-                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-                });
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar-fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
             });
-
-
-            function scrollIt(destination, duration = 200, easing = 'linear', callback) {
-
-                const easings = {
-                    linear(t) {
-                        return t;
-                    },
-                    easeInQuad(t) {
-                        return t * t;
-                    },
-                    easeOutQuad(t) {
-                        return t * (2 - t);
-                    },
-                    easeInOutQuad(t) {
-                        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-                    },
-                    easeInCubic(t) {
-                        return t * t * t;
-                    },
-                    easeOutCubic(t) {
-                        return (--t) * t * t + 1;
-                    },
-                    easeInOutCubic(t) {
-                        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-                    },
-                    easeInQuart(t) {
-                        return t * t * t * t;
-                    },
-                    easeOutQuart(t) {
-                        return 1 - (--t) * t * t * t;
-                    },
-                    easeInOutQuart(t) {
-                        return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
-                    },
-                    easeInQuint(t) {
-                        return t * t * t * t * t;
-                    },
-                    easeOutQuint(t) {
-                        return 1 + (--t) * t * t * t * t;
-                    },
-                    easeInOutQuint(t) {
-                        return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
-                    }
-                };
-
-                const start = window.pageYOffset;
-                const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-                const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-                const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-                const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-
-                if ('requestAnimationFrame' in window === false) {
-                    window.scroll(0, destinationOffsetToScroll);
-                    if (callback) {
-                        callback();
-                    }
-                    return;
-                }
-
-                function scroll() {
-                    const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-                    const time = Math.min(1, ((now - startTime) / duration));
-                    const timeFunction = easings[easing](time);
-                    window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-
-                    if (window.pageYOffset === destinationOffsetToScroll) {
-                        if (callback) {
-                            callback();
-                        }
-                        return;
-                    }
-
-                    requestAnimationFrame(scroll);
-                }
-
-                scroll();
-            }
-
-            // my stuff
-            var button = '';
-            var sectionHeight = -1;
-
-            function setVariable() {
-                button = document.querySelectorAll('.js-scrolldown')[0];
-                console.log(button.closest('.section'));
-                sectionHeight = button.closest('.section').offsetHeight;
-            }
-
-            setVariable();
-
-            // function I copied
-            document.querySelector('.js-scrolldown').addEventListener('click', () => scrollIt(sectionHeight, 500, 'easeInOutCubic'));
-
-            // reset variables after resizing
-            window.onresize = function (event) {
-                setVariable();
-            };
-
+        });
 
     </script>
+   
 </body>
 </html>
