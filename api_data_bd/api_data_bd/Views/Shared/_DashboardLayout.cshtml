@@ -89,7 +89,12 @@
                         <span>Statistices</span>
                     </a>
                 </li>
-
+                <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "ContactUsAdminView" ? "active" : "") ">
+                    <a class="nav-link" href="@Url.Action("Index","ContactUsAdminView")">
+                        <i class="fas fa-fw fa-chart-pie"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </li>
 
 
                 <!-- Divider -->

@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>3</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -265,6 +266,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\BoardResultsController.cs" />
+    <Compile Include="Controllers\ContactUsAdminViewController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituitionsAddressesController.cs" />
@@ -287,6 +289,7 @@
     <Compile Include="Models\AdminUsers.cs" />
     <Compile Include="Models\AdminUsersRegisterBindingModel.cs" />
     <Compile Include="Models\BoardResult.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituitions.cs" />
     <Compile Include="Models\InstituitionsAddress.cs" />
@@ -2113,6 +2116,12 @@
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Shared\_DefaultAppLayout.cshtml" />
     <Content Include="Views\AdminUsers\Register.cshtml" />
+    <Content Include="Views\ContactUsAdminView\Create.cshtml" />
+    <Content Include="Views\ContactUsAdminView\Delete.cshtml" />
+    <Content Include="Views\ContactUsAdminView\Details.cshtml" />
+    <Content Include="Views\ContactUsAdminView\Edit.cshtml" />
+    <Content Include="Views\ContactUsAdminView\Index.cshtml" />
+    <Content Include="Views\Home\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utiles\Helper\" />
