@@ -46,6 +46,11 @@ namespace api_data_bd.Controllers
         }
 
         // PUT: api/Instituitions/5
+        /// <summary>
+        /// This api Url to update single  Instituition Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
+        /// <param name="instituitions">The Institution information of the data</param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutInstituitions(int id, Instituitions instituitions)
         {
@@ -81,6 +86,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST: api/Instituitions
+        /// <summary>
+        /// This api Url to create single  Instituition Information
+        /// </summary>
+        /// <param name="instituitions">The Institution information of the data</param>
         [ResponseType(typeof(Instituitions))]
         public async Task<IHttpActionResult> PostInstituitions(Instituitions instituitions)
         {
@@ -96,6 +105,10 @@ namespace api_data_bd.Controllers
         }
 
         // DELETE: api/Instituitions/5
+        /// <summary>
+        /// This api Url to delete single  Instituition Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(Instituitions))]
         public async Task<IHttpActionResult> DeleteInstituitions(int id)
         {

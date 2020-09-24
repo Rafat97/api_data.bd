@@ -137,9 +137,6 @@ C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\System.Web.Http.Owin.xml
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
-C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.InitialCreate.resources
-C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.Migrations.Instituition.resources
-C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.GenerateResource.cache
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csproj.CopyComplete
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.dll
 C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.pdb
@@ -436,3 +433,6 @@ D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_d
 D:\cse note and everything\3.2\sd lab\web projects\api_data.bd\api_data_bd\api_data_bd\bin\MySql.Web.xml
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\obj\Debug\api_data_bd.csprojAssemblyReference.cache
 C:\Users\rafat\My_Github\sd-5\api_data.bd\api_data_bd\api_data_bd\bin\XmlDocument.xml
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\XmlDocument.xml
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\FluentValidation.dll
+C:\Users\mmc\Documents\GitHub\api_data.bd\api_data_bd\api_data_bd\bin\FluentValidation.xml

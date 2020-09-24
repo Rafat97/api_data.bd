@@ -18,12 +18,19 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/InstituteStatistics
+        /// <summary>
+        /// This api Url to get all InstituteStatistics Information
+        /// </summary>
         public IQueryable<InstituteStatistics> GetInstituteStatistics()
         {
             return db.InstituteStatistics;
         }
 
         // GET: api/InstituteStatistics/5
+        /// <summary>
+        /// This api Url to get an InstituteStatistics Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(InstituteStatistics))]
         public async Task<IHttpActionResult> GetInstituteStatistics(int id)
         {
@@ -37,6 +44,11 @@ namespace api_data_bd.Controllers
         }
 
         // PUT: api/InstituteStatistics/5
+        /// <summary>
+        /// This api Url to update single InstituteStatistics Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
+        /// <param name="instituteStatistics">The InstituteStatistics information of the data</param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutInstituteStatistics(int id, InstituteStatistics instituteStatistics)
         {
@@ -72,6 +84,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST: api/InstituteStatistics
+        /// <summary>
+        /// This api Url to create single  InstituteStatistics Information
+        /// </summary>
+        /// <param name="instituteStatistics">The InstituteStatistics information of the data</param>
         [ResponseType(typeof(InstituteStatistics))]
         public async Task<IHttpActionResult> PostInstituteStatistics(InstituteStatistics instituteStatistics)
         {
@@ -87,6 +103,10 @@ namespace api_data_bd.Controllers
         }
 
         // DELETE: api/InstituteStatistics/5
+        /// <summary>
+        /// This api Url to delete single  InstituteStatistics Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(InstituteStatistics))]
         public async Task<IHttpActionResult> DeleteInstituteStatistics(int id)
         {

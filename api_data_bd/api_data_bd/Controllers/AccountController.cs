@@ -52,6 +52,9 @@ namespace api_data_bd.Controllers
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo
+        /// <summary>
+        /// This api Url to get  UserInfo
+        /// </summary>
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -67,6 +70,9 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/Logout
+        /// <summary>
+        /// This api Url to logout
+        /// </summary>
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
@@ -75,6 +81,11 @@ namespace api_data_bd.Controllers
         }
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// This api Url to manange Identity
+        /// </summary>
+        /// <param name="returnUrl">The url of the data.</param>
+        ///  <param name="generateState">The state of the data.</param>
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
@@ -115,6 +126,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/ChangePassword
+        /// <summary>
+        /// This api Url to change password
+        /// </summary>
+        /// <param name="model">The model of the changepassword data.</param>
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
@@ -135,6 +150,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/SetPassword
+        /// <summary>
+        /// This api Url to set password
+        /// </summary>
+        /// <param name="model">The model of the setpassword data.</param>
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
@@ -154,6 +173,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/AddExternalLogin
+        /// <summary>
+        /// This api Url to addExternalLogin
+        /// </summary>
+        /// <param name="model">The model of the ExternalLogin data.</param>
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
@@ -192,6 +215,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/RemoveLogin
+        /// <summary>
+        /// This api Url to removelogin
+        /// </summary>
+        /// <param name="model">The model of the RemoveLogin data.</param>
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -221,6 +248,11 @@ namespace api_data_bd.Controllers
         }
 
         // GET api/Account/ExternalLogin
+        /// <summary>
+        /// This api Url to ExternalLogin
+        /// </summary>
+        /// <param name="provider">The model of the provider data.</param>
+        ///  <param name="error">The error of the  data.</param>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
@@ -278,6 +310,11 @@ namespace api_data_bd.Controllers
         }
 
         // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// This api Url to getExternalLogin
+        /// </summary>
+        /// <param name="returnUrl">The url of the externalLogin .</param>
+        ///  <param name="generateStat">The state of the  data.</param>
         [AllowAnonymous]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
@@ -319,6 +356,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/Register
+        /// <summary>
+        /// This api Url to Register
+        /// </summary>
+        /// <param name="model">The model of the Register data.</param>
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -341,6 +382,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST api/Account/RegisterExternal
+        /// <summary>
+        /// This api Url to RegisterExternal
+        /// </summary>
+        /// <param name="model">The model of the RegisterExternal data.</param>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]

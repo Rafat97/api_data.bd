@@ -18,12 +18,19 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/BoardResults
+        /// <summary>
+        /// This api Url to get all Instituitions BoardResults Information
+        /// </summary>
         public IQueryable<BoardResult> GetBoardResults()
         {
             return db.BoardResults;
         }
 
         // GET: api/BoardResults/5
+        /// <summary>
+        /// This api Url to get an Instituition BoardResults Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(BoardResult))]
         public async Task<IHttpActionResult> GetBoardResult(string id)
         {
@@ -37,6 +44,11 @@ namespace api_data_bd.Controllers
         }
 
         // PUT: api/BoardResults/5
+        /// <summary>
+        /// This api Url to update single  Instituition BoardResult Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
+        /// <param name="boardResult">The Institution BoardResult of the data</param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutBoardResult(int id, BoardResult boardResult)
         {
@@ -72,6 +84,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST: api/BoardResults
+        /// <summary>
+        /// This api Url to create single  Instituition BoardResults Information
+        /// </summary>
+        /// <param name="boardResult">The Institution BoardResult of the data</param>
         [ResponseType(typeof(BoardResult))]
         public async Task<IHttpActionResult> PostBoardResult(BoardResult boardResult)
         {
@@ -102,6 +118,10 @@ namespace api_data_bd.Controllers
         }
 
         // DELETE: api/BoardResults/5
+        /// <summary>
+        /// This api Url to delete single  Instituition BoardResult Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(BoardResult))]
         public async Task<IHttpActionResult> DeleteBoardResult(string id)
         {

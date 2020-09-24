@@ -481,6 +481,133 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:api_data_bd.Controllers.AccountController.GetUserInfo">
+            <summary>
+            This api Url to get  UserInfo
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.Logout">
+            <summary>
+            This api Url to logout
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.GetManageInfo(System.String,System.Boolean)">
+            <summary>
+            This api Url to manange Identity
+            </summary>
+            <param name="returnUrl">The url of the data.</param>
+             <param name="generateState">The state of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.ChangePassword(api_data_bd.Models.ChangePasswordBindingModel)">
+            <summary>
+            This api Url to change password
+            </summary>
+            <param name="model">The model of the changepassword data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.SetPassword(api_data_bd.Models.SetPasswordBindingModel)">
+            <summary>
+            This api Url to set password
+            </summary>
+            <param name="model">The model of the setpassword data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.AddExternalLogin(api_data_bd.Models.AddExternalLoginBindingModel)">
+            <summary>
+            This api Url to addExternalLogin
+            </summary>
+            <param name="model">The model of the ExternalLogin data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.RemoveLogin(api_data_bd.Models.RemoveLoginBindingModel)">
+            <summary>
+            This api Url to removelogin
+            </summary>
+            <param name="model">The model of the RemoveLogin data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.GetExternalLogin(System.String,System.String)">
+            <summary>
+            This api Url to ExternalLogin
+            </summary>
+            <param name="provider">The model of the provider data.</param>
+             <param name="error">The error of the  data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.GetExternalLogins(System.String,System.Boolean)">
+            <summary>
+            This api Url to getExternalLogin
+            </summary>
+            <param name="returnUrl">The url of the externalLogin .</param>
+             <param name="generateStat">The state of the  data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.Register(api_data_bd.Models.RegisterBindingModel)">
+            <summary>
+            This api Url to Register
+            </summary>
+            <param name="model">The model of the Register data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.AccountController.RegisterExternal(api_data_bd.Models.RegisterExternalBindingModel)">
+            <summary>
+            This api Url to RegisterExternal
+            </summary>
+            <param name="model">The model of the RegisterExternal data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.BoardResultsController.GetBoardResults">
+            <summary>
+            This api Url to get all Instituitions BoardResults Information
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.BoardResultsController.GetBoardResult(System.String)">
+            <summary>
+            This api Url to get an Instituition BoardResults Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.BoardResultsController.PutBoardResult(System.Int32,api_data_bd.Models.BoardResult)">
+            <summary>
+            This api Url to update single  Instituition BoardResult Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+            <param name="boardResult">The Institution BoardResult of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.BoardResultsController.PostBoardResult(api_data_bd.Models.BoardResult)">
+            <summary>
+            This api Url to create single  Instituition BoardResults Information
+            </summary>
+            <param name="boardResult">The Institution BoardResult of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.BoardResultsController.DeleteBoardResult(System.String)">
+            <summary>
+            This api Url to delete single  Instituition BoardResult Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsAddressesController.GetInstituitionsAddresses">
+            <summary>
+            This api Url to get all InstituitionsAddresses
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsAddressesController.GetInstituitionsAddress(System.Int32)">
+            <summary>
+            This api Url to get an InstituitionAddress
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsAddressesController.PutInstituitionsAddress(System.Int32,api_data_bd.Models.InstituitionsAddress)">
+            <summary>
+            This api Url to update single  InstituitionAddress
+            </summary>
+            <param name="id">The ID of the data.</param>
+            <param name="instituitionsAddress">The InstituitionsAddress of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsAddressesController.PostInstituitionsAddress(api_data_bd.Models.InstituitionsAddress)">
+            <summary>
+            This api Url to create single  InstituitionAddress
+            </summary>
+            <param name="instituitionsAddress">The InstituitionsAddress  of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsAddressesController.DeleteInstituitionsAddress(System.Int32)">
+            <summary>
+            This api Url to delete single  InstituitionAddress
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
         <member name="M:api_data_bd.Controllers.InstituitionsController.GetInstituitions">
             <summary>
             This api Url to get all Instituitions Information
@@ -489,6 +616,115 @@
         <member name="M:api_data_bd.Controllers.InstituitionsController.GetInstituitions(System.Int32)">
             <summary>
             This api Url to get an Instituitions Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsController.PutInstituitions(System.Int32,api_data_bd.Models.Instituitions)">
+            <summary>
+            This api Url to update single  Instituition Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+            <param name="instituitions">The Institution information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsController.PostInstituitions(api_data_bd.Models.Instituitions)">
+            <summary>
+            This api Url to create single  Instituition Information
+            </summary>
+            <param name="instituitions">The Institution information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituitionsController.DeleteInstituitions(System.Int32)">
+            <summary>
+            This api Url to delete single  Instituition Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituteStatisticsController.GetInstituteStatistics">
+            <summary>
+            This api Url to get all InstituteStatistics Information
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituteStatisticsController.GetInstituteStatistics(System.Int32)">
+            <summary>
+            This api Url to get an InstituteStatistics Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituteStatisticsController.PutInstituteStatistics(System.Int32,api_data_bd.Models.InstituteStatistics)">
+            <summary>
+            This api Url to update single InstituteStatistics Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+            <param name="instituteStatistics">The InstituteStatistics information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituteStatisticsController.PostInstituteStatistics(api_data_bd.Models.InstituteStatistics)">
+            <summary>
+            This api Url to create single  InstituteStatistics Information
+            </summary>
+            <param name="instituteStatistics">The InstituteStatistics information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.InstituteStatisticsController.DeleteInstituteStatistics(System.Int32)">
+            <summary>
+            This api Url to delete single  InstituteStatistics Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.StudentsController.GetStudents">
+            <summary>
+            This api Url to get all Students Information
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.StudentsController.GetStudents(System.Int32)">
+            <summary>
+            This api Url to get a student Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.StudentsController.PutStudents(System.Int32,api_data_bd.Models.Students)">
+            <summary>
+            This api Url to update single  student Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+            <param name="students">The student information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.StudentsController.PostStudents(api_data_bd.Models.Students)">
+            <summary>
+            This api Url to create single student Information
+            </summary>
+            <param name="students">The student information of the data</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.StudentsController.DeleteStudents(System.Int32)">
+            <summary>
+            This api Url to delete single student Information
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.ValuesController.Get">
+            <summary>
+            This api Url to get all values
+            </summary>
+        </member>
+        <member name="M:api_data_bd.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            This api Url to get a specific value
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            This api Url to update a value
+            </summary>
+            <param name="value">updated value</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            This api Url to create single  value
+            </summary>
+            <param name="id">The id of the data</param>
+            <param name="value">new value</param>
+        </member>
+        <member name="M:api_data_bd.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            This api Url to delete a single value
             </summary>
             <param name="id">The ID of the data.</param>
         </member>

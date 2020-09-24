@@ -18,12 +18,19 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/InstituitionsAddresses
+        /// <summary>
+        /// This api Url to get all InstituitionsAddresses
+        /// </summary>
         public IQueryable<InstituitionsAddress> GetInstituitionsAddresses()
         {
             return db.InstituitionsAddresses;
         }
 
         // GET: api/InstituitionsAddresses/5
+        /// <summary>
+        /// This api Url to get an InstituitionAddress
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(InstituitionsAddress))]
         public async Task<IHttpActionResult> GetInstituitionsAddress(int id)
         {
@@ -37,6 +44,11 @@ namespace api_data_bd.Controllers
         }
 
         // PUT: api/InstituitionsAddresses/5
+        /// <summary>
+        /// This api Url to update single  InstituitionAddress
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
+        /// <param name="instituitionsAddress">The InstituitionsAddress of the data</param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutInstituitionsAddress(int id, InstituitionsAddress instituitionsAddress)
         {
@@ -72,6 +84,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST: api/InstituitionsAddresses
+        /// <summary>
+        /// This api Url to create single  InstituitionAddress
+        /// </summary>
+        /// <param name="instituitionsAddress">The InstituitionsAddress  of the data</param>
         [ResponseType(typeof(InstituitionsAddress))]
         public async Task<IHttpActionResult> PostInstituitionsAddress(InstituitionsAddress instituitionsAddress)
         {
@@ -87,6 +103,10 @@ namespace api_data_bd.Controllers
         }
 
         // DELETE: api/InstituitionsAddresses/5
+        /// <summary>
+        /// This api Url to delete single  InstituitionAddress
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(InstituitionsAddress))]
         public async Task<IHttpActionResult> DeleteInstituitionsAddress(int id)
         {

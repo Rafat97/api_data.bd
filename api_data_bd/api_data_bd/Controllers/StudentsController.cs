@@ -17,12 +17,19 @@ namespace api_data_bd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Students
+        /// <summary>
+        /// This api Url to get all Students Information
+        /// </summary>
         public IQueryable<Students> GetStudents()
         {
             return db.Students;
         }
 
         // GET: api/Students/5
+        /// <summary>
+        /// This api Url to get a student Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(Students))]
         public IHttpActionResult GetStudents(int id)
         {
@@ -36,6 +43,11 @@ namespace api_data_bd.Controllers
         }
 
         // PUT: api/Students/5
+        /// <summary>
+        /// This api Url to update single  student Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
+        /// <param name="students">The student information of the data</param>
         [ResponseType(typeof(void))]
         public IHttpActionResult PutStudents(int id, Students students)
         {
@@ -71,6 +83,10 @@ namespace api_data_bd.Controllers
         }
 
         // POST: api/Students
+        /// <summary>
+        /// This api Url to create single student Information
+        /// </summary>
+        /// <param name="students">The student information of the data</param>
         [ResponseType(typeof(Students))]
         public IHttpActionResult PostStudents(Students students)
         {
@@ -86,6 +102,10 @@ namespace api_data_bd.Controllers
         }
 
         // DELETE: api/Students/5
+        /// <summary>
+        /// This api Url to delete single student Information
+        /// </summary>
+        /// <param name="id">The ID of the data.</param>
         [ResponseType(typeof(Students))]
         public IHttpActionResult DeleteStudents(int id)
         {
