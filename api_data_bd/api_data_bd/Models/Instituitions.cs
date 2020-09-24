@@ -55,6 +55,8 @@ namespace api_data_bd.Models
         //[IgnoreDataMember]
         public virtual ICollection<BoardResult> BoardResult { get; set; }
 
+        public virtual ICollection<InstituteStatistics> InstituteStatistics { get; set; }
+
 
         public Instituitions()
         {

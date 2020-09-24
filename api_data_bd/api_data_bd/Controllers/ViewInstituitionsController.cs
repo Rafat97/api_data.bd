@@ -124,7 +124,15 @@ namespace api_data_bd.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
             Instituitions instituitions = db.Instituitions.Find(id);
+            IEnumerable<BoardResult> boardResults = instituitions.BoardResult;
+            IEnumerable<InstituteStatistics> instituteStatistics = instituitions.InstituteStatistics;
+            foreach (var data in boardResults)
+                data.Instituitions = null;
+            foreach (var data in instituteStatistics)
+                data.Instituitions = null;
+
             db.Instituitions.Remove(instituitions);
             db.SaveChanges();
             //return RedirectToAction("Index");
