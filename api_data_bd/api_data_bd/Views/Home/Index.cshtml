@@ -38,6 +38,7 @@
             .navbar-fixed-top.scrolled .nav-link {
                 color: #555;
             }
+
         .dnow-regionsContent {
             background-color: SlateGray;
             position: relative;
@@ -72,8 +73,17 @@
             font-size: 6.5vh;
         }
 
-       
+        .bg-dark-2 {
+            background-color: #181924 !important;
+        }
 
+        .how-it-work {
+            transition: all ease-out .3s;
+        }
+
+            .how-it-work:hover {
+                box-shadow: 0 10px 36px 0 rgba(54,68,75,.18);
+            }
     </style>
 
 
@@ -86,7 +96,7 @@
             <nav id="our_nav_bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent navbar-fixed-top py-3">
                 <div class="container">
                     <a class="navbar-brand text-white" href="@Url.Action("Index","Home")">
-                        <h3>API Warhouse</h3>
+                        <h3 style="font-weight:700">API WAREHOUSE</h3>
                     </a>
                     <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -97,6 +107,8 @@
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
 
+                            <a class="nav-link text-white" href="#section-3">How It's Work</a>
+                            <a class="nav-link text-white" href="#section-4">About Us</a>
                             <a class="nav-link text-white" href="@Url.Action("Contact","Home")">Contact Us</a>
 
                         </form>
@@ -107,323 +119,340 @@
 
     </header>
 
+    <div data-spy="scroll" data-target="#our_nav_bar" data-offset="0">
 
 
-    <section class="section" data-aos="fade-in">
-        <div class="row text-center p-0 m-0">
-            <div class="col-md-12 m-0 p-0">
+        <section class="section" data-aos="fade-in">
+            <div class="row text-center p-0 m-0">
+                <div class="col-md-12 m-0 p-0">
 
-                <div class="dnow-regionsContent">
-                    <div class="card border-0 bg-dark text-white">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="~/image/backgroundImage4.png" height="665px" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/image/backgroundImage3.png" height="665px" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/image/backgroundImage2.jpg" height="665px" class="d-block w-100" alt="...">
+                    <div class="dnow-regionsContent">
+                        <div class="card border-0 bg-dark text-white">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="~/image/backgroundImage4.png" height="665px" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="~/image/backgroundImage3.png" height="665px" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="~/image/backgroundImage2.jpg" height="665px" class="d-block w-100" alt="...">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        @* <img src="~/image/backgroundImage4.png" height="500px">*@
-                        <div class="overlay-div"></div>
-                        <div class="card-img-overlay d-flex justify-content-center align-items-center container"
-                             data-aos="zoom-in"
-                             data-aos-offset="100"
-                             data-aos-delay="50"
-                             data-aos-duration="500"
-                             data-aos-easing="ease-in-out"
-                             data-aos-anchor-placement="top-center">
-                            <div class="row">
-                                <div class=" col-sm-12 text-content">
-                                    <h2 class="card-title ">
-                                        <h1 class="ml11">
-                                            <span class="text-wrapper font-title">
-                                                <span class="letters">BD EDUCATIONAL INSTITUTE WAREHOUSE</span>
-                                            </span>
-                                        </h1>
-                                        @*<h2 class="text-white font-title my-2">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>*@
-                                        <p class="lead text-white my-3 font-weight-normal">This is an API for Educational Institution of Bangladesh.</p>
-                                    </h2>
-                                    <a href="@Url.Action("Index","Help")">
-                                        <button class="btn btn-outline-primary btn-lg rounded-btn py-2 px-4 text-white-50 my-2">Explore The API</button>
-                                    </a>
+                            @* <img src="~/image/backgroundImage4.png" height="500px">*@
+                            <div class="overlay-div"></div>
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center container"
+                                 data-aos="zoom-in"
+                                 data-aos-offset="100"
+                                 data-aos-delay="100"
+                                 data-aos-duration="500"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-anchor-placement="top-center">
+                                <div class="row">
+                                    <div class=" col-sm-12 text-content">
+                                        <h2 class="card-title ">
+                                            <h1 class="ml11">
+                                                <span class="text-wrapper font-title">
+                                                    <span class="letters">BD EDUCATIONAL INSTITUTE WAREHOUSE</span>
+                                                </span>
+                                            </h1>
+                                            @*<h2 class="text-white font-title my-2">BD EDUCATIONAL INSTITUTE WAREHOUSE</h2>*@
+                                            <p class="lead text-white my-3 font-weight-normal">This is an API for Educational Institution of Bangladesh.</p>
+                                        </h2>
+                                        <a href="@Url.Action("Index","Help")">
+                                            <button class="btn btn-outline-primary btn-lg rounded-btn py-2 px-4 text-white-50 my-2">Explore The API</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="hero__scroll  js-scrolldown d-none d-md-block">
-                    <div>
-                        <a href="#section-2">
-                            <i class="fas fa-chevron-down fa-3x"></i><br />
-                            <i class="fas fa-chevron-down fa-3x"></i>
+                    <div class="hero__scroll  js-scrolldown d-none d-md-block">
+                        <div>
+                            <a href="#section-2">
+                                <i class="fas fa-chevron-down fa-3x"></i><br />
+                                <i class="fas fa-chevron-down fa-3x"></i>
                             </a>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section>
-
-    <section id="section-2" class="border-0 mt-5 py-5" >
-        <div class="container"
-              data-aos="fade-up"
-             data-aos-offset="100"
-             data-aos-delay="20"
-             data-aos-duration="500"
-             data-aos-easing="ease-in-out"
-             data-aos-anchor-placement="top-center"
-             >
-            <div class="row">
-                <div class="col-md-12 my-auto">
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title"> WHAT'S WE PROVIDE </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/instituteImage.jpg" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        Institution
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/instituteAddressImage2.jpg" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        Institution Address
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/statisticsImage.jpg" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        Institute Statistics
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card text-white border-0">
-                                <img src="~/image/boardExamImage.jpg" height="159px">
-                                <div class="overley-card"></div>
-                                <div class="overley-card-parent d-flex justify-content-center align-items-center">
-                                    <div class="row ">
-                                        Board Result
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <section id="section-3" class="border-0 mt-5"
-             data-aos="flip-up"
-             data-aos-offset="100"
-             data-aos-delay="20"
-             data-aos-duration="500"
-             data-aos-easing="ease-in-out"
-             data-aos-anchor-placement="top-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 my-auto">
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title">  HOW IT'S WORK  </h1>
+        <section id="section-2" class="border-0 mt-5 py-5">
+            <div class="container"
+                 data-aos="fade-up"
+                 data-aos-offset="100"
+                 data-aos-delay="60"
+                 data-aos-duration="600"
+                 data-aos-easing="ease-in-out"
+                 data-aos-anchor-placement="top-center">
+                <div class="row">
+                    <div class="col-md-12 my-auto">
+                        <div class="row">
+                            <div class="col-md-12 text-center mb-5 mt-5">
+                                <h1 class="font-title"> WHAT'S WE PROVIDE </h1>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card" style="height:350px;">
-                                <i class="fas fa-database text-center fa-5x mt-5"></i>
-                                <div class="card-body mt-1">
-                                    <h4 class="card-title text-center mb-3">Explore The Api</h4>
-                                    <p class="card-text text-center mt-4" style="font-size:large;">Click 'explore the API' button.Then an API documention page will open.</p>
+                        <div class="row">
+                            <div class="col-md-3 mb-4">
+                                <div class="card text-white border-0">
+                                    <img src="~/image/instituteImage.jpg" height="159px">
+                                    <div class="overley-card"></div>
+                                    <div class="overley-card-parent d-flex justify-content-center align-items-center">
+                                        <div class="row ">
+                                            Institution
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <div class="card text-white border-0">
+                                    <img src="~/image/instituteAddressImage2.jpg" height="159px">
+                                    <div class="overley-card"></div>
+                                    <div class="overley-card-parent d-flex justify-content-center align-items-center">
+                                        <div class="row ">
+                                            Institution Address
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <div class="card text-white border-0">
+                                    <img src="~/image/statisticsImage.jpg" height="159px">
+                                    <div class="overley-card"></div>
+                                    <div class="overley-card-parent d-flex justify-content-center align-items-center">
+                                        <div class="row ">
+                                            Institute Statistics
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <div class="card text-white border-0">
+                                    <img src="~/image/boardExamImage.jpg" height="159px">
+                                    <div class="overley-card"></div>
+                                    <div class="overley-card-parent d-flex justify-content-center align-items-center">
+                                        <div class="row ">
+                                            Board Result
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card" style="height:350px;">
-                                <i class="fas fa-link text-center fa-5x mt-5"></i>
-                                <div class="card-body mt-1">
-                                    <h4 class="card-title text-center mb-3">Copy The Url</h4>
-                                    <p class="card-text text-center mt-4">
-                                        Click the sections from top bar or scroll down for finding which type of data you need.Then click the link
-                                        for your desire request and copy the URL from basic info.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card" style="height:350px;">
-                               
-                                <div class="text-center mt-5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                         width="90" height="90"
-                                         viewBox="0 0 172 172"
-                                         style=" fill:#000000;">
-                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#787880"><path d="M22.93333,22.93333c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v34.4v80.26667h57.33333v-11.46667h-45.86667v-68.8h126.13333v68.8h-45.86667v11.46667h57.33333v-86v-28.66667c0,-6.33533 -5.13133,-11.46667 -11.46667,-11.46667zM28.66667,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM51.6,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM68.8,40.13333h80.26667v11.46667h-80.26667zM86,91.73333l-22.93333,22.93333h17.2v40.13333c0,3.23951 -2.49383,5.73333 -5.73333,5.73333c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843c9.43116,0 17.2,-7.76884 17.2,-17.2v-40.13333h17.2z"></path></g></g>
-                                    </svg>
-                                </div>
-
-                                <div class="card-body mt-1">
-                                    <h4 class="card-title text-center mb-3">Use The Copied Link</h4>
-                                    <p class="card-text text-center mt-4">
-                                        Use the copied link in your browser or in your application for getting the your desired data in JSON
-                                        format.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                       
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-
-    <section id="section-4" class="border-0 mt-5"
-             data-aos="flip-right"
-             data-aos-offset="100"
-             data-aos-delay="20"
-             data-aos-duration="500"
-             data-aos-easing="ease-in-out"
-             data-aos-anchor-placement="top-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 my-auto">
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title"> ABOUT US </h1>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="blue-bg d-flex justify-content-center align-items-center">
-                                <div>
-                                    <img src="~/image/rafat.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
-                                </div>
-
+        <section id="section-3" class="border-0 mt-5 py-5"
+                 data-aos="fade-right"
+                 data-aos-offset="100"
+                 data-aos-delay="60"
+                 data-aos-duration="700"
+                 data-aos-easing="ease-in-out"
+                 data-aos-anchor-placement="top-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 my-auto">
+                        <div class="row">
+                            <div class="col-md-12 text-center mb-5 mt-5">
+                                <h1 id="section-3" class="font-title">  HOW IT'S WORK  </h1>
                             </div>
-                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
-                                <div>
-                                    <div class="card-body mt-5 pt-4">
-                                        <h3 class="card-title text-center mt-2">Emdadul Haque</h3>
-                                        <h5 class="card-text text-center mt-3">ID: 170104028</h5>
-                                        <h5 class="card-text text-center mb-3">Contact: +880 1521-428741</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card bg-dark-2 text-white-50 how-it-work" style="height:350px;">
+                                    <i class="fas fa-database text-center fa-5x mt-5"></i>
+                                    <div class="card-body mt-1">
+                                        <h4 class="card-title text-center mb-3">Explore The Api</h4>
+                                        <p class="card-text text-center mt-4" style="font-size:large;">Click 'explore the API' button.Then an API documention page will open.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card bg-dark-2 text-white-50" style="height:350px;">
+                                    <i class="fas fa-link text-center fa-5x mt-5"></i>
+                                    <div class="card-body mt-1">
+                                        <h4 class="card-title text-center mb-3">Copy The Url</h4>
+                                        <p class="card-text text-center mt-4">
+                                            Click the sections from top bar or scroll down for finding which type of data you need.Then click the link
+                                            for your desire request and copy the URL from basic info.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  bg-dark-2 text-white-50" style="height:350px;">
+                                    <div class="text-center mt-5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                             width="90" height="90"
+                                             viewBox="0 0 172 172"
+                                             style=" fill:#000000;">
+                                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#787880"><path d="M22.93333,22.93333c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v34.4v80.26667h57.33333v-11.46667h-45.86667v-68.8h126.13333v68.8h-45.86667v11.46667h57.33333v-86v-28.66667c0,-6.33533 -5.13133,-11.46667 -11.46667,-11.46667zM28.66667,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM51.6,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM68.8,40.13333h80.26667v11.46667h-80.26667zM86,91.73333l-22.93333,22.93333h17.2v40.13333c0,3.23951 -2.49383,5.73333 -5.73333,5.73333c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843c9.43116,0 17.2,-7.76884 17.2,-17.2v-40.13333h17.2z"></path></g></g>
+                                        </svg>
+                                    </div>
+
+                                    <div class="card-body mt-1">
+                                        <h4 class="card-title text-center mb-3">Use The Copied Link</h4>
+                                        <p class="card-text text-center mt-4">
+                                            Use the copied link in your browser or in your application for getting the your desired data in JSON
+                                            format.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="blue-bg d-flex justify-content-center align-items-center">
-                                <div>
-                                    <img src="~/image/rakib.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
-                                </div>
-
-                            </div>
-                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
-                                <div>
-                                    <div class="card-body mt-5 pt-4">
-                                        <h3 class="card-title text-center mt-2">Mohammad Rakib</h3>
-                                        <h5 class="card-text text-center mt-3">ID: 170104041</h5>
-                                        <h5 class="card-text text-center mb-3">Contact: +880 1643-394222</h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="blue-bg d-flex justify-content-center align-items-center">
-                                <div>
-                                    <img src="~/image/drubojit.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555;">
-                                </div>
-
-                            </div>
-                            <div class="card d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
-                                <div>
-                                    <div class="card-body mt-5 pt-4">
-                                        <h3 class="card-title text-center mt-2">Drubojit Saha</h3>
-                                        <h5 class="card-text text-center mt-3">ID: 170104027</h5>
-                                        <h5 class="card-text text-center mb-3">Contact: +880 1625-490666</h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-  
-
-    <footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-12 my-auto">
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-5 mt-5">
-                            <h1 class="font-title"> Footer </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-   
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <section id="section-4" class="border-0 mt-5"
+                 data-aos="fade-up"
+                 data-aos-offset="100"
+                 data-aos-delay="60"
+                 data-aos-duration="600"
+                 data-aos-easing="ease-in-out"
+                 data-aos-anchor-placement="top-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 my-auto">
+                        <div class="row">
+                            <div class="col-md-12 text-center mb-5 mt-5">
+                                <h1 class="font-title"> ABOUT US </h1>
+                            </div>
+                        </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+                        <div class="row">
+                            <div class="col-md-4 mb-4"
+                                 data-aos="flip-right"
+                                 data-aos-offset="100"
+                                 data-aos-delay="60"
+                                 data-aos-duration="900"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-anchor-placement="top-center">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <img src="~/image/rafat.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:white;padding:5px">
+                                    </div>
 
-    <script>
+                                </div>
+                                <div class="card bg-dark-2 text-white-50 d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                    <div>
+                                        <div class="card-body mt-5 pt-4">
+                                            <h3 class="card-title text-center mt-2">Emdadul Haque</h3>
+                                            <h5 class="card-text text-center mt-3">ID: 170104028</h5>
+                                            <h5 class="card-text text-center mb-3">Contact: +880 1521-428741</h5>
+                                        </div>
+                                    </div>
+                                </div>
 
-        $(function () {
-            $(document).scroll(function () {
-                var $nav = $(".navbar-fixed-top");
-                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                            </div>
+
+                            <div class="col-md-4 mb-4"
+                                 data-aos="flip-right"
+                                 data-aos-offset="100"
+                                 data-aos-delay="60"
+                                 data-aos-duration="900"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-anchor-placement="top-center">
+                                <div class="blue-bg d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <img src="~/image/rakib.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:white; padding:5px">
+                                    </div>
+
+                                </div>
+                                <div class="card bg-dark-2  text-white-50 d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                    <div>
+                                        <div class="card-body mt-5 pt-4">
+                                            <h3 class="card-title text-center mt-2">Mohammad Rakib</h3>
+                                            <h5 class="card-text text-center mt-3">ID: 170104041</h5>
+                                            <h5 class="card-text text-center mb-3">Contact: +880 1643-394222</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4 mb-4"
+                                 data-aos="flip-right"
+                                 data-aos-offset="100"
+                                 data-aos-delay="60"
+                                 data-aos-duration="900"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-anchor-placement="top-center">
+                                <div class="blue-bg d-flex justify-content-center align-items-center ">
+                                    <div>
+                                        <img src="~/image/drubojit.jpg" height="130px" width="130px" style=" border-radius: 100%; border:solid; border-color:#555; border-color:white; padding:5px">
+                                    </div>
+
+                                </div>
+                                <div class="card bg-dark-2 text-white-50 d-flex justify-content-center align-items-center" style="top:-50px; z-index:-1;">
+                                    <div>
+                                        <div class="card-body mt-5 pt-4">
+                                            <h3 class="card-title text-center mt-2">Drubojit Saha</h3>
+                                            <h5 class="card-text text-center mt-3">ID: 170104027</h5>
+                                            <h5 class="card-text text-center mb-3">Contact: +880 1625-490666</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</div>
+        <footer>
+            <div class="container-fluid bg-dark">
+                <div class="row ">
+                    <div class="col-md-12 my-auto">
+                        <div class="row">
+                            <div class="col-md-12 text-center  my-3 ">
+                                <h5 class="text-white p-0 m-0">
+                                    © 2020 Copyright: <a class="text-white" href="@Url.Action("Index","Home")">ApiWarhouse.com</a>
+
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+        <script>
+
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $(".navbar-fixed-top");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
             });
-        });
 
-    </script>
-   
+        </script>
+
 </body>
 </html>
